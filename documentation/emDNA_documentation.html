@@ -1,0 +1,437 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+*{margin:0;padding:0;}
+body {
+	font:13.34px helvetica,arial,freesans,clean,sans-serif;
+	color:black;
+	line-height:1.4em;
+	background-color: #F8F8F8;
+	padding: 0.7em;
+}
+p {
+	margin:1em 0;
+	line-height:1.5em;
+}
+table {
+	font-size:inherit;
+	font:100%;
+	margin:1em;
+}
+table th{border-bottom:1px solid #bbb;padding:.2em 1em;}
+table td{border-bottom:1px solid #ddd;padding:.2em 1em;}
+input[type=text],input[type=password],input[type=image],textarea{font:99% helvetica,arial,freesans,sans-serif;}
+select,option{padding:0 .25em;}
+optgroup{margin-top:.5em;}
+pre,code{font:12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;}
+pre {
+	margin:1em 0;
+	font-size:12px;
+	background-color:#eee;
+	border:1px solid #ddd;
+	padding:5px;
+	line-height:1.5em;
+	color:#444;
+	overflow:auto;
+	-webkit-box-shadow:rgba(0,0,0,0.07) 0 1px 2px inset;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;border-radius:3px;
+}
+pre code {
+	padding:0;
+	font-size:12px;
+	background-color:#eee;
+	border:none;
+}
+code {
+	font-size:12px;
+	background-color:#f8f8ff;
+	color:#444;
+	padding:0 .2em;
+	border:1px solid #dedede;
+}
+img{border:0;max-width:100%;}
+abbr{border-bottom:none;}
+a{color:#4183c4;text-decoration:none;}
+a:hover{text-decoration:underline;}
+a code,a:link code,a:visited code{color:#4183c4;}
+h2,h3{margin:1em 0;}
+h1,h2,h3,h4,h5,h6{border:0;}
+h1{font-size:170%;border-top:4px solid #aaa;padding-top:.5em;margin-top:1.5em;}
+h1:first-child{margin-top:0;padding-top:.25em;border-top:none;}
+h2{font-size:150%;margin-top:1.5em;border-top:4px solid #e0e0e0;padding-top:.5em;}
+h3{margin-top:1em;}
+hr{border:1px solid #ddd;}
+ul{margin:1em 0 1em 2em;}
+ol{margin:1em 0 1em 2em;}
+ul li,ol li{margin-top:.5em;margin-bottom:.5em;}
+ul ul,ul ol,ol ol,ol ul{margin-top:0;margin-bottom:0;}
+blockquote{margin:1em 0;border-left:5px solid #ddd;padding-left:.6em;color:#555;}
+dt{font-weight:bold;margin-left:1em;}
+dd{margin-left:2em;margin-bottom:1em;}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>emDNA documentation</title>
+
+</head>
+<body>
+<h1>emDNA documentation</h1>
+
+<p><a href="http://research.nicocvn.com">Nicolas Clauvelin</a></p>
+
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#data_formats">Data formats</a></li>
+<li><a href="#emdna_tool">Command-line tool: <em>emDNA</em></a></li>
+<li><a href="#other_tools">Other tools</a></li>
+<li><a href="#implemented_force_fields">List of implemented force fields</a></li>
+<li><a href="#log_file">Log file details</a></li>
+<li><a href="#force_field">Using an external force field</a></li>
+</ul>
+
+
+<h2><a name="introduction"></a>Introduction</h2>
+
+<p><em>emDNA</em> is a software for the minimization of the elastic energy of a collection of DNA base pairs.</p>
+
+<h2><a name="data_formats"></a>Data formats</h2>
+
+<p><em>emDNA</em> can read and write data base-pair collection data in three formats:</p>
+
+<ul>
+<li>bp list format (<a href="#bplist"><em>bplist</em></a>),</li>
+<li>x3DNA bp format (<a href="#x3DNAbp"><em>x3DNAbp</em></a>),</li>
+<li>x3DNA bp step parameters format (<a href="#x3DNAprms"><em>x3DNAparams</em></a>).</li>
+</ul>
+
+
+<h3><a name="bplist"></a><em>bplist</em> format</h3>
+
+<p>The bp list format correspond to a bracket-list format readable in Mathematica.
+This format does not include any sequence information and, hence, is not suitable for sequence-dependent computations.</p>
+
+<p>The format encodes a base-pair frame as:</p>
+
+<pre><code>{{origin_x,origin_y,origin_z}, {{d1x,d1y,d1z}, {d2x,d2y,d2z}, {d3x,d3y,d3z}}}
+</code></pre>
+
+<p>An input file in bp list format is composed by a list of base-pair frames (each
+on a separate line).</p>
+
+<h3><a name="x3DNAbp"></a><em>x3DNAbp</em> format</h3>
+
+<p>The <em>x3DNAbp</em> format corresponds to a description of every base pair in the collection, and each base pair is formatted as:</p>
+
+<pre><code>...     5 A-T   # N:...1_:[.DA]A - M:..23_:[.DT]T
+   -5.3173    18.3644   -13.2982  # origin
+   -0.0353    -0.1103     0.9933  # x-axis
+   -0.0890    -0.9896    -0.1131  # y-axis
+    0.9954    -0.0923     0.0251  # z-axis
+</code></pre>
+
+<p>The first line indicates the index of the base pair (numbering starts at 1) and the data after the <code>#</code> are not relevant. The first line always starts with the <code>...</code> characters and always contains the base-pair sequence after the index (that is, the two nucleotides forming the base pair). The following four lines describe the coordinates of the base-pair origin and axes (again the data after the <code>#</code> are not relevant and can be omitted).</p>
+
+<p>The parsing of such file in <em>emDNA</em> expects that every line which is not describing a base pair is either empty or starting with a <code>#</code>.</p>
+
+<h3><a name="x3DNAprms"></a><em>x3DNAparams</em> format</h3>
+
+<p>The <em>x3DNAparams</em> format corresponds to a list of all the step parameters. The file usually contains a header indicating the type of the parameters. <em>emDNA</em> only uses the rigid-body base-pair parameters and hence the base parameters are not relevant. Also, the header is not required for parsing.</p>
+
+<pre><code>#        Shear    Stretch   Stagger   Buckle   Prop-Tw   Opening     Shift     Slide     Rise      Tilt      Roll      Twist
+T-A     -0.083    -0.197    -0.212     1.146   -12.278    -5.051    -0.264    -0.347     3.194     2.012    -1.575    35.719
+</code></pre>
+
+<p>The parsing of such file in <em>emDNA</em> expects that every line which is not describing a set of step parameters is either empty or starting with a <code>#</code>.</p>
+
+<h3>Input file guidelines</h3>
+
+<ul>
+<li>Always make sure the input file contains well-formatted numerical data (<em>i.e.</em>, for example, no <code>*^</code> symbols).</li>
+<li>When using x3DNA formats, make sure that every line which is not containing data starts with a <code>#</code>; in particular, x3DNA sometimes add information in the first lines that should be commented.</li>
+<li>When using a format encoding base-pair frames make sure your frames are orthogonalized.</li>
+</ul>
+
+
+<h2><a name="emdna_tool"></a>Command-line tool: <em>emDNA</em></h2>
+
+<h3>Myosin installation</h3>
+
+<p><em>emDNA</em> is installed on myosin at <code>/home/shared/emDNA/install/bin</code>. Documentation and supporting information can be found at <code>/home/shared/emDNA/docs</code>.</p>
+
+<p>In order to be able to execute <em>emDNA</em> you need to setup your <code>LD_LIBRARY_PATH</code> environment variable as follows:</p>
+
+<pre><code>export LD_LIBRARY_PATH=/home/clauvelin/local_installs/gcc/install/4.8.2/lib64
+</code></pre>
+
+<p>This line should be added to your <code>.profile</code> or <code>.bashrc</code> file.</p>
+
+<p>If you already have setup a <code>LD_LIBRARY_PATH</code> variable use:</p>
+
+<pre><code>export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/home/clauvelin/local_installs/gcc/install/4.8.2/lib64
+</code></pre>
+
+<h3>Arguments and options</h3>
+
+<p>A complete description of the various required arguments and options can be obtained by executing:</p>
+
+<pre><code>$&gt; ./emDNA -h
+</code></pre>
+
+<p>or</p>
+
+<pre><code>$&gt; ./emDNA --help
+</code></pre>
+
+<p>Arguments, flags and options are passed as with any standard UNIX programs, that is:</p>
+
+<pre><code>$&gt; ./emDNA --argument=value --flag --optional-parameter=some_value --optional-flag
+</code></pre>
+
+<h4>Input files [required]</h4>
+
+<p>An input file containing the initial base-pair collection has to be provided using one of the three following arguments depending on the file format:</p>
+
+<ul>
+<li><code>--x3DNA-bp-input=&lt;filename&gt;</code>: for input file with <a href="#x3DNAbp"><em>x3DNAbp</em></a> format,</li>
+<li><code>--x3DNA-bp-step-params-input=&lt;filename&gt;</code>: for input file with <a href="#x3DNAparmas"><em>x3DNAparams</em></a> format,</li>
+<li><code>--bp-list-input=&lt;filename&gt;</code>: for input file with <a href="#bplist"><em>bplist</em></a> format.</li>
+</ul>
+
+
+<h4>End conditions [required]</h4>
+
+<p>The end conditions applied to the base-pair collection has to be indicated by using one of the following flags:</p>
+
+<ul>
+<li><code>--free-collection</code>: the collection is free of any imposed constraint (used for debug purposes mainly),</li>
+<li><code>--hold-last-origin</code>: the origin of the last base pair is imposed and cannot change through the minimization process (imposed end-to-end vector),</li>
+<li><code>--hold-last-bp</code>: the origin and orientation of the last base pair is imposed and cannot change through the minimization process (imposed end-to-end vector and end-to-end rotation).</li>
+</ul>
+
+
+<h4>Sequence-dependence model [required]</h4>
+
+<p>The sequence-dependence model for the minimization has to be indicated by either referring to an implemented model or by providing an <a href="#force_field">external force field</a>.</p>
+
+<ul>
+<li><code>--DNA-seqdep-model=&lt;string&gt;</code>: <code>string</code> should be one of the implemented force fields (see <a href="#implemented_force_fields">list of force fields</a>),</li>
+<li><code>--DNA-external-model=&lt;filename (binary)&gt;</code>: specifies a file containing a packaged force field (see <a href="#force_field">external force field</a>).</li>
+</ul>
+
+
+<h4>Options</h4>
+
+<p>Below is the list of all options:</p>
+
+<ul>
+<li><code>--output-progress=&lt;integer&gt;</code>: frequency for writing the current configuration (during the minimization) to <code>tmp_confs.txt</code>; zero disables output,</li>
+<li><code>--energy-progress</code>: displays the current energy during the minimization,</li>
+<li><code>--quiet</code>: suppresses console output (useful when using <em>emDNA</em> in scripts),</li>
+<li><code>--minim-settings=&lt;{vector}&gt;</code>: changes the minimization settings; the vector should be of the form <code>{max-iterations,dx,f,g,max-step-size}</code>,</li>
+<li><code>--frozen-steps=&lt;{list}&gt;</code>: specify the ranges of steps to be considered as frozen; the list should be of the form <code>step_i:step_j,step_k:step_l</code> to specify the ranges [i,j] and [k,l] (numbering starts at 1 and the range is inclusive),</li>
+<li><code>--output-name=&lt;string&gt;</code>: prefix name for output files; if not specified it defaults to <em>emDNA_minim</em>,</li>
+<li><code>--,  --ignore_rest</code>: ignores the rest of the command line following this flag,</li>
+<li><code>--version</code>: displays version information and exits,</li>
+<li><code>-h,  --help</code>: displays usage information and exits.</li>
+</ul>
+
+
+<h3>Output files</h3>
+
+<p><em>emDNA</em> creates two output files: a logfile and a file containing the optimized base-pair collection. The file containing the optimized base pair collection is in the same format as the input file and named by <code>emDNA_minim_opt.txt</code> by default. The log file is explained <a href="#log_file">below</a>.</p>
+
+<h3>Example</h3>
+
+<p>Minimize the configuration found in <code>DNA_fragment.txt</code> (<em>bplist</em> format) with the last base pair fixed and using <code>DNA_fragment</code> as an output prefix and using <code>IdealDNA</code> as force field:</p>
+
+<pre><code>./emDNA --bp-list-input=DNA_fragment.txt --DNA-seqdep-model=IdealDNA --hold-last-bp --output-name=DNA_fragment
+</code></pre>
+
+<h2><a name="other_tools"></a>Other tools</h2>
+
+<p>All these tools have a command-line help accessible by executing the tool with the option <code>-h</code> or <code>--help</code>.</p>
+
+<h3><em>emDNA_parser</em></h3>
+
+<p>This tool can be used to convert data in one of the x3DNA format to any other format. In case data in a x3DNA format are converted to the <em>bplist</em> format, the sequence information are lost.</p>
+
+<h3><em>emDNA_topology</em></h3>
+
+<p>This tool can be used to compute the topological characteristics of a base-pair collection.</p>
+
+<h3><em>emDNA_force_field</em></h3>
+
+<p>This tool can be used to package an external force field in order to use it with <em>emDNA</em>. See <a href="#force_field">Using an external force field</a>.</p>
+
+<h2><a name="implemented_force_fields"></a>List of implemented force fields</h2>
+
+<p>Below is the list of implemented force fields that can be used for the argument <code>--DNA-seqdep-model=&lt;string&gt;</code>. Force fields with the mention <strong>[no sequence-dependence]</strong> are uniform, that is, the intrinsic steps and force constants do not depend on the details of the sequence.</p>
+
+<h3>IdealDNA [no sequence-dependence]</h3>
+
+<p>This force field corresponds to a straight B-DNA-like rest state with an helical repeat of 10.5 pb. The force constants are isotropic and quasi-inextensible (persistence lengths for bending is 47.7 nm and 66.6 nm for twisting).</p>
+
+<h3>IdealDNA_304 [no sequence-dependence]</h3>
+
+<p>Same as <code>IdealDNA</code> but with an intrinsic twist of 34.3 degrees (the helical repeat is still close to 10.5 bp).</p>
+
+<h3>AnisoDNA [no sequence-dependence]</h3>
+
+<p>This force field corresponds to a straight B-DNA-like rest state with an helical repeat of 10.5 pb. The force constants are anisotropic and quasi-inextensible. The persistence lengths are the same as for <code>IdealDNA</code>.</p>
+
+<h3>AnisoDNA_304 [no sequence-dependence]</h3>
+
+<p>Same as <code>AnisoDNA</code> but with an intrinsic twist of 34.3 degrees (the helical repeat is still close to 10.5 bp).</p>
+
+<h3>Olson1998</h3>
+
+<p>This force field is fully sequence-dependent and the values are based on PNAS 1998, <strong>vol 95</strong>, number 19, 11163-11168.</p>
+
+<h2><a name="log_file"></a>Log file details</h2>
+
+<p>The log file contains various information about the minimization process. By default the log file is named <code>emDNA_minim.log</code> (see <code>--output-name</code> option to change it). Here is an example:</p>
+
+<pre><code>log file timestamp: 2014-07-23 09:23:24
+
+
+&gt;&gt; command line input
+--x3DNA-bp-input=&lt;filename&gt;: 
+--x3DNA-bp-step-params-input=&lt;filename&gt;: 
+--bp-list-input=&lt;filename&gt;: minicircle_68bp.txt
+--pulling-force=&lt;{vector}&gt;: {0,0,-1.2}
+--DNA-seqdep-model=&lt;string&gt;: IdealDNA
+--DNA-external-model=&lt;filename (binary)&gt;: 
+--output-name=&lt;string&gt;: emDNA_minim
+--frozen-steps=&lt;{list}&gt;: 
+--minim-settings=&lt;{vector}&gt;: 
+--output-progress=&lt;integer&gt;: 5
+--free-collection: false
+--hold-last-origin: false
+--hold-last-bp: false
+--pull-last-bp: true
+--quiet: false
+--energy-progress: true
+
+&gt;&gt; initial bp collection
+number of base pairs: 69
+number of bp steps: 68
+sequence: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+step parameters:
+# SEQ      N/A        N/A        N/A        N/A        N/A        N/A        SHIFT      SLIDE      RISE       TILT       ROLL       TWIST
+A-T        0.00000    0.00000    0.00000    0.00000    0.00000    0.00000    0.00000    0.00000    0.00000    0.00000    0.00000    0.00000
+A-T        0.00000    0.00000    0.00000    0.00000    0.00000    0.00000    0.00000    -0.00000   3.40000    2.78699    4.50115    31.76471
+
+&gt;&gt; minimization results
+minimization description: Alglib gradient-based | EEDR collection
+initial energy: 53.5908021757
+final energy: 6.3190724345
+angular gradient norm: 0.0036884676
+distance gradient norm: 0.0000649606
+# iterations: 1480
+return code: EPSG
+
+&gt;&gt; energy contributions for step parameter pairs
+{1.3684335288, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000}
+{0.0000000000, 1.4338175002, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000}
+{0.0000000000, 0.0000000000, 0.0000000034, 0.0000000000, 0.0000000000, 0.0000000000}
+{0.0000000000, 0.0000000000, 0.0000000000, 0.0004527981, 0.0000000000, 0.0000000000}
+{0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 0.0004645536, 0.0000000000}
+{0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 0.0005388812}
+</code></pre>
+
+<p>The various sections correspond to:</p>
+
+<ul>
+<li>timestamp: indicates the date at which the minimization was launch,</li>
+<li>command line input: list all command-line options with their parsed values (useful to diagnose an option problem),</li>
+<li>initial bp collection: contains information about the input and list the step parameters in x3DNA format,</li>
+<li>minimization results: contains the results of the minimization (description, initial and final energies, gradient norms, ...),</li>
+<li>energy contributions for step parameter pairs: gives the contributions to the energy of the different modes of deformation.</li>
+</ul>
+
+
+<p>The return code provided in the minimization results has the following meaning:</p>
+
+<ul>
+<li><code>EPSX</code>: the minimization stopped because the optimal point was not changing more than the threshold,</li>
+<li><code>EPSF</code>: the minimization stopped because the objective function (energy) was not decreasing more than the threshold,</li>
+<li><code>EPSG</code>: the minimization successfully reduced the gradient norm below the threshold,</li>
+<li><code>MAXIT</code>: the minimization reached the maximum number of iterations (can be relaunched with the output as new input),</li>
+<li><code>BADCONDS</code>: the conditions are not sufficient to minimize the energy (this should not happen),</li>
+<li><code>BADGRAD</code>: an error occurred in the computation of the gradient (this should not happen),</li>
+<li><code>UNKNOWN</code>: an error occurred and most likely there is a bug in the software or a bad input.</li>
+</ul>
+
+
+<p>In case the return code is <code>EPSX</code> of <code>EPSF</code> a new minimization can be performed using the output as new input and changing the minimization settings (see <code>--minim-settings</code>).</p>
+
+<h2><a name="force_field"></a>Using an external force field</h2>
+
+<p><em>emDNA</em> can use an external force field (that is, a set of intrinsic step parameters and a set of force constant matrices). In order to use an external force field, the data needs to be packaged using the tool <em>emDNA_force_field</em>.</p>
+
+<h3>Preparing the data</h3>
+
+<p>The intrinsic step parameters and force constant matrices need to be described in two different text files with a specific syntax before being packaged.</p>
+
+<p>The intrinsic step parameters file has to be formatted as:</p>
+
+<pre><code>AA={0, 0, 34.2857, 0, 0, 3.4}
+AC={0, 0, 34.2857, 0, 0, 3.4}
+AG={0, 0, 34.2857, 0, 0, 3.4}
+AT={0, 0, 34.2857, 0, 0, 3.4}
+CA={0, 0, 34.2857, 0, 0, 3.4}
+CC={0, 0, 34.2857, 0, 0, 3.4}
+CG={0, 0, 34.2857, 0, 0, 3.4}
+CT={0, 0, 34.2857, 0, 0, 3.4}
+GA={0, 0, 34.2857, 0, 0, 3.4}
+GC={0, 0, 34.2857, 0, 0, 3.4}
+GG={0, 0, 34.2857, 0, 0, 3.4}
+GT={0, 0, 34.2857, 0, 0, 3.4}
+TA={0, 0, 34.2857, 0, 0, 3.4}
+TC={0, 0, 34.2857, 0, 0, 3.4}
+TG={0, 0, 34.2857, 0, 0, 3.4}
+TT={0, 0, 34.2857, 0, 0, 3.4}
+</code></pre>
+
+<p>The file has to contain the 16 possible combinations of step sequences (the order is not relevant) and for each combination a bracket-list vector of dimension 6 is required.</p>
+
+<p>The file describing the force constant matrices follows the same rules, except that, the bracket-list vector has to be of dimension 36(=6*6).</p>
+
+<p>For these two files the order of the data in the bracket-list is: tilt, roll, twist, shift, slide, and rise. For the force constant matrices it means that the flatten bracket-list vector corresponds to:</p>
+
+<pre><code>{tilt/tilt, tilt/roll, tilt/twist, tilt/shift, tilt/slide, tilt/rise, roll/tilt, roll/roll, roll/twist, ...}
+</code></pre>
+
+<h3>Packaging the force field</h3>
+
+<p>To package the force field one has to use the <em>emDNA_force_field</em>. The tool requires the two files described above and a model name. The model name will be used to load the force field in emDNA.</p>
+
+<p>Let's consider we have the intrinsic step parameters in the file <code>steps.txt</code> and the force constant matrices in <code>fmat.txt</code>. To create a force field named <code>my_force_field</code> the command to be executed is:</p>
+
+<pre><code>$&gt; ./emDNA_force_field --intrinsic-steps-input=steps.txt --force-constants-input=fmat.txt --model-name=my_force_field
+
+force field packaged in:
+  my_force_field.ff (binary version)
+  my_force_field.json (text version)
+</code></pre>
+
+<p>The tool creates two output files: a binary version to be used with <em>emDNA</em> and a text (JSON format) version for checking purposes (<em>i.e.</em>, verify that the packaged force field is equivalent to the data contained in the two input files).</p>
+
+<h3>Using the force field</h3>
+
+<p>Once the force field is packaged into a binary file it can be used with <em>emDNA</em> using the option <code>--DNA-external-model=&lt;filename (binary)&gt;</code>, where <code>filename</code> should be equal to the force field binary filename (<code>my_force_field.ff</code> in the previous example).</p>
+</body>
+</html>
