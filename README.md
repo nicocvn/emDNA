@@ -1,6 +1,7 @@
 # Project emDNA
 
-This is the main repository for the emDNA minimization software package developed by Nicholas Clauvelin and currently housed by the Olson Biopolymer Structures laboratory at Rutgers University (New Brunswick, NJ).
+This is the main repository for the emDNA minimization software package developed by Nicholas Clauvelin.
+This is a C++ software package currently housed by the Olson Biopolymer Structures laboratory at Rutgers University (New Brunswick, NJ).
 
 Organization set-up into three directories: 'emDNA', 'DNASim', and 'Documentation'
 
