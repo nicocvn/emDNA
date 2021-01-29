@@ -16,9 +16,8 @@
 namespace DNAElec {
 
     // physical constants related to electrostatics treatment
-    // this assumes 2 charges per base pair with a 76% concentration (Manning
-    // theory)
-    // for a 10mL concentration the Debye length is 30.4 Angstroms
+    // this assumes 2 charges per base pair with a 76% concentration (Manning theory)
+    // for a 100mmoL concentration of monovalent salt the Debye length is 30.4 Angstromsll
     const Real WaterPermittivity = Real(77.4); // for T=300 K
     const Real VacuumPermittivity = Real(8.854188e-22);
     // July 2019: change ChargeDNA calculation for screening percentage- 24%, not 48%
