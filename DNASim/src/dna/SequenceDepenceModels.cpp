@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <SequenceDepenceModels.h>
+#include "dna/SequenceDepenceModels.h"
 
 
 namespace DNASim {

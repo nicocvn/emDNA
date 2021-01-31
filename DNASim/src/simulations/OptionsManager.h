@@ -14,8 +14,8 @@
 #define DNASim_OptionsManager_h
 
 
-#include <EnhancedString.h>
-#include <InputFileHandler.h>
+#include "file_io/EnhancedString.h"
+#include "file_io/InputFileHandler.h"
 
 
 namespace DNASim {

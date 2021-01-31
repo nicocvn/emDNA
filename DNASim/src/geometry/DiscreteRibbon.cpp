@@ -2,11 +2,11 @@
 // Nicolas Clauvelin
 
 
-#include <Segment.h>
-#include <CurveTopology.h>
-#include <Triad.h>
-#include <AffineTransformation.h>
-#include <DiscreteRibbon.h>
+#include "geometry/Segment.h"
+#include "geometry/CurveTopology.h"
+#include "maths/Triad.h"
+#include "maths/AffineTransformation.h"
+#include "geometry/DiscreteRibbon.h"
 
 
 namespace DNASim {

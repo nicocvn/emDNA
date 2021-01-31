@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <PDBChain.h>
+#include "pdb/PDBChain.h"
 
 
 namespace DNASim {

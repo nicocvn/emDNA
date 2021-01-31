@@ -12,7 +12,7 @@
 #define DNASim_PDBAtomRecord_h
 
 
-#include <EnhancedString.h>
+#include "file_io/EnhancedString.h"
 
 
 // PDB format

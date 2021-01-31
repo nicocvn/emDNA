@@ -9,7 +9,7 @@
 #define MC_DNA_ForceConstantsDB_h
 
 
-#include <MatrixN.h>
+#include "maths/MatrixN.h"
 
 
 namespace DNASim {

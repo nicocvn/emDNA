@@ -11,7 +11,7 @@
 #define DNASim_OutputFileHandler_h
 
 
-#include <FileHandler.h>
+#include "file_io/FileHandler.h"
 
 
 namespace DNASim {

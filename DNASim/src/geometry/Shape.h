@@ -11,8 +11,8 @@
 #define DNASim_Shape_h
 
 
-#include <ODE_Includes.h>
-#include <Triad.h>
+#include "geometry/ODE_Includes.h"
+#include "maths/Triad.h"
 
 
 namespace DNASim {

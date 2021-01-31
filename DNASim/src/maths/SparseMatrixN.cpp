@@ -2,10 +2,10 @@
 // Nicolas Clauvelin
 
 
-#include <SparseMatrixEntries.h>
-#include <MatrixN.h>
-#include <VectorN.h>
-#include <SparseMatrixN.h>
+#include "maths/SparseMatrixEntries.h"
+#include "maths/MatrixN.h"
+#include "maths/VectorN.h"
+#include "maths/SparseMatrixN.h"
 
 
 namespace DNASim {

@@ -9,7 +9,7 @@
 #define DNASim_SphereShape_h
 
 
-#include <Shape.h>
+#include "geometry/Shape.h"
 
 
 namespace DNASim {

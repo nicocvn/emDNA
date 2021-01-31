@@ -2,8 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <CurveTopology.h>
-#include <Segment.h>
+#include "geometry/CurveTopology.h"
+#include "geometry/Segment.h"
 
 
 namespace DNASim {

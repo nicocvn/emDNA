@@ -13,7 +13,7 @@
 #define DNASim_PDBParser_h
 
 
-#include <PDBStructure.h>
+#include "pdb/PDBStructure.h"
 
 
 namespace DNASim {

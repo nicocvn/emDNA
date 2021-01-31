@@ -14,7 +14,7 @@
 #define DNASim_Triad_h
 
 
-#include <Matrix4.h>
+#include "maths/Matrix4.h"
 
 
 // enum type for triad axis

@@ -2,8 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <Vector3.h>
-#include <Shape.h>
+#include "maths/Vector3.h"
+#include "geometry/Shape.h"
 
 
 namespace DNASim {

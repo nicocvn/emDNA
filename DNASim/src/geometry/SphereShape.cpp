@@ -2,9 +2,9 @@
 // Nicolas Clauvelin
 
 
-#include <Vector3.h>
-#include <EnhancedString.h>
-#include <SphereShape.h>
+#include "maths/Vector3.h"
+#include "file_io/EnhancedString.h"
+#include "geometry/SphereShape.h"
 
 
 namespace DNASim {

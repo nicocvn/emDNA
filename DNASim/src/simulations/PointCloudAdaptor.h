@@ -13,7 +13,7 @@
 #define DNASim_PointCloudAdaptor_h
 
 
-#include <PointCloud.h>
+#include "simulations/PointCloud.h"
 
 
 namespace DNASim {

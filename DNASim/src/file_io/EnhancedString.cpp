@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <EnhancedString.h>
+#include "file_io/EnhancedString.h"
 
 
 namespace DNASim {

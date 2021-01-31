@@ -9,8 +9,8 @@
 #define DNASim_StepArray_h
 
 
-#include <StepParameters.h>
-#include <Matrix4.h>
+#include "dna/StepParameters.h"
+#include "maths/Matrix4.h"
 
 
 namespace DNASim {

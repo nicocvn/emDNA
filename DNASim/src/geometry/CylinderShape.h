@@ -9,7 +9,7 @@
 #define DNASim_CylinderShape_h
 
 
-#include <Shape.h>
+#include "geometry/Shape.h"
 
 
 namespace DNASim {

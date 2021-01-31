@@ -9,10 +9,12 @@
 #define DNASim_Eigen_Includes_h
 
 
-#include <DNASim_Includes.h>
+#include "DNASim_Includes.h"
 
 
 // suppress warnings
+#pragma clang diagnostic push
+#pragma GCC diagnostic push
 #pragma clang diagnostic ignored "-Wconversion"
 #pragma GCC diagnostic ignored "-Wconversion"
 #pragma clang diagnostic ignored "-Wsign-compare"
@@ -22,6 +24,8 @@
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wshadow"
 #pragma GCC diagnostic ignored "-Wshadow"
+#pragma GCC diagnostic ignored "-Wdeprecated"
+#pragma clang diagnostic ignored "-Wdeprecated"
 
 
 // includes
@@ -30,6 +34,10 @@
 #include <Eigen/SparseCore>
 #include <Eigen/StdVector>
 #include <Eigen/Eigenvalues>
+
+
+#pragma clang diagnostic pop
+#pragma GCC diagnostic push
 
 
 // directives

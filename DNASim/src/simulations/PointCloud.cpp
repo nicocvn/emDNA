@@ -6,8 +6,8 @@
 // accessors
 
 
-#include <Shape.h>
-#include <PointCloud.h>
+#include "geometry/Shape.h"
+#include "simulations/PointCloud.h"
 
 
 namespace DNASim {

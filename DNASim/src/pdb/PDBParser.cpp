@@ -2,9 +2,9 @@
 // Nicolas Clauvelin
 
 
-#include <InputFileHandler.h>
-#include <PDBAtomRecord.h>
-#include <PDBParser.h>
+#include "file_io/InputFileHandler.h"
+#include "pdb/PDBAtomRecord.h"
+#include "pdb/PDBParser.h"
 
 
 namespace DNASim {

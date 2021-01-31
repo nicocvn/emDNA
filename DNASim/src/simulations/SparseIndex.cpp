@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <SparseIndex.h>
+#include "simulations/SparseIndex.h"
 
 
 // constructor with range initialization

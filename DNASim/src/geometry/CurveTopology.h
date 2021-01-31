@@ -16,7 +16,7 @@
 #define DNASim_CurveTopology_h
 
 
-#include <Segment.h>
+#include "geometry/Segment.h"
 
 
 namespace DNASim {

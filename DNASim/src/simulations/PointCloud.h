@@ -15,11 +15,11 @@
 #define DNASim_PointCloud_h
 
 
-#include <Vector3.h>
-#include <VectorN.h>
-#include <Matrix3.h>
-#include <MatrixN.h>
-#include <Triad.h>
+#include "maths/Vector3.h"
+#include "maths/VectorN.h"
+#include "maths/Matrix3.h"
+#include "maths/MatrixN.h"
+#include "maths/Triad.h"
 
 
 namespace DNASim {

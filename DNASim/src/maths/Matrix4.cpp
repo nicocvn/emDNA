@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <Matrix4.h>
+#include "maths/Matrix4.h"
 
 
 namespace DNASim {
