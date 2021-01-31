@@ -1,0 +1,92 @@
+﻿---
+# clang-format style definition
+# Nicolas Clauvelin, Sendyne Corp. 2019
+Language:        Cpp
+BasedOnStyle: Google
+AccessModifierOffset: '-4'
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: 'false'
+AlignConsecutiveDeclarations: 'false'
+AlignEscapedNewlines: Right
+AlignOperands: 'true'
+AlignTrailingComments: 'true'
+AllowAllParametersOfDeclarationOnNextLine: 'false'
+AllowShortBlocksOnASingleLine: 'false'
+AllowShortCaseLabelsOnASingleLine: 'false'
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: 'false'
+AllowShortLoopsOnASingleLine: 'false'
+AlwaysBreakAfterReturnType: None
+AlwaysBreakBeforeMultilineStrings: 'false'
+AlwaysBreakTemplateDeclarations: 'true'
+BinPackArguments: 'false'
+BinPackParameters: 'false'
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterClass: 'false'
+  AfterControlStatement: 'false'
+  AfterEnum: 'false'
+  AfterFunction: 'false'
+  AfterNamespace: 'false'
+  AfterStruct: 'false'
+  AfterUnion: 'false'
+  AfterExternBlock: 'false'
+  BeforeCatch: 'true'
+  BeforeElse: 'true'
+  IndentBraces: 'false'
+  SplitEmptyFunction: 'false'
+  SplitEmptyRecord: 'false'
+  SplitEmptyNamespace: 'false'
+BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeInheritanceComma: 'false'
+BreakBeforeTernaryOperators: 'true'
+BreakConstructorInitializers: BeforeColon
+BreakInheritanceList: BeforeColon
+BreakStringLiterals: 'true'
+ColumnLimit: '80'
+CompactNamespaces: 'false'
+ConstructorInitializerAllOnOneLineOrOnePerLine: 'true'
+ConstructorInitializerIndentWidth: '4'
+ContinuationIndentWidth: '4'
+Cpp11BracedListStyle: 'true'
+DerivePointerAlignment: 'false'
+DisableFormat: 'false'
+ExperimentalAutoDetectBinPacking: 'false'
+FixNamespaceComments: 'true'
+IncludeBlocks: Regroup
+IndentCaseLabels: 'true'
+IndentPPDirectives: AfterHash
+IndentWidth: '4'
+IndentWrappedFunctionNames: 'false'
+KeepEmptyLinesAtTheStartOfBlocks: 'true'
+MaxEmptyLinesToKeep: '2'
+NamespaceIndentation: None
+PointerAlignment: Left
+ReflowComments: 'true'
+SortIncludes: 'true'
+SortUsingDeclarations: 'true'
+SpaceAfterCStyleCast: 'false'
+SpaceAfterTemplateKeyword: 'true'
+SpaceBeforeAssignmentOperators: 'true'
+SpaceBeforeCpp11BracedList: 'false'
+SpaceBeforeCtorInitializerColon: 'true'
+SpaceBeforeInheritanceColon: 'true'
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: 'true'
+SpaceInEmptyParentheses: 'false'
+SpacesBeforeTrailingComments: '4'
+SpacesInAngles: 'false'
+SpacesInContainerLiterals: 'false'
+SpacesInCStyleCastParentheses: 'false'
+SpacesInParentheses: 'false'
+SpacesInSquareBrackets: 'false'
+Standard: Cpp11
+TabWidth: '4'
+UseTab: Never
+IncludeCategories:
+  - Regex:           '^".*'
+    Priority:        1
+  - Regex:           '^<.*'
+    Priority:        2
+
+...

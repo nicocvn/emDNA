@@ -11,6 +11,13 @@ somewhere/
     emDNA.git/          <-- the repository
 ```
 
+0. Clone the repository:
+
+   ```
+   cd somewhere/
+   git clone --recursive git@github.com:rty10/emDNA.git emDNA.git
+   ```
+
 1. Create a build directory (stay in `somewhere/` directory):
 
     ```
