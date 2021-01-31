@@ -1,18 +1,46 @@
-# Ignore these files/directories and do not add to git project
+### Generic git ignore file ###
 
-### Clion specific directories ###
-*.idea
-build
-cmake-build-debug
-
-### Compiled Object files ###
-*.slo
-*.lo
+# Object files
 *.o
+*.ko
 *.obj
+*.elf
 
-### Compiled Dynamic libraries ###
-*.so
-*.dylib
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
 *.dll
+*.so
+*.so.*
+*.dylib
 
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+*.bin
+
+# Mac specific
+.DS_Store
+
+# CLion specific
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+**/.idea/*.iml
+**/.idea/modules.xml
+**/.idea/vcs.xml
+
+# Build directories
+**/build
+**/cmake-build-*/
