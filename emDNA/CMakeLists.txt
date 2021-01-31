@@ -8,7 +8,7 @@ cmake_minimum_required (VERSION 2.6)
 
 # --- emDNA project --- #
 
-project (emDNA CXX C)
+#project (emDNA CXX C)
 include (emDNACommon.cmake)
 set (EMDNA_MAJOR_VERSION "0")
 set (EMDNA_MINOR_VERSION "0")
@@ -127,22 +127,22 @@ include_directories (BEFORE src/tclap)
 include_directories (BEFORE src/tools)
 include_directories (BEFORE src/utils)
 
-# DNASim
-find_library(DNASIM_LIB_STATIC DNASim_static
-	PATHS
-	/usr/local/lib/DNASim/lib
-	)
-if (DNASIM_LIB_STATIC-NOTFOUND)
-	message(WARNING "could not find DNASim static library")
-endif (DNASIM_LIB_STATIC-NOTFOUND)
-find_path(DNASIM_INCLUDE DNASim_Includes.h
-	PATHS
-	/usr/local/lib/DNASim/include/DNASim
-	)
-if (DNASIM_INCLUDE-NOTFOUND)
-	message(WARNING "could not find DNASim library headers")
-endif (DNASIM_INCLUDE-NOTFOUND)
-include_directories (BEFORE ${DNASIM_INCLUDE})
+## DNASim
+#find_library(DNASIM_LIB_STATIC DNASim_static
+#	PATHS
+#	/usr/local/lib/DNASim/lib
+#	)
+#if (DNASIM_LIB_STATIC-NOTFOUND)
+#	message(WARNING "could not find DNASim static library")
+#endif (DNASIM_LIB_STATIC-NOTFOUND)
+#find_path(DNASIM_INCLUDE DNASim_Includes.h
+#	PATHS
+#	/usr/local/lib/DNASim/include/DNASim
+#	)
+#if (DNASIM_INCLUDE-NOTFOUND)
+#	message(WARNING "could not find DNASim library headers")
+#endif (DNASIM_INCLUDE-NOTFOUND)
+include_directories (BEFORE ${CMAKE_SOURCE_DIR}/deps)
 
 
 # --- target directives --- #
@@ -161,26 +161,26 @@ set_target_properties(emDNALib
     )
 
 # link
-target_link_libraries (emDNALib ${DNASIM_LIB_STATIC})
+target_link_libraries (emDNALib DNASim)
 
 # emDNA app
 add_executable(emDNA ${emDNAAppCppSources})
-target_link_libraries(emDNA ${DNASIM_LIB_STATIC} emDNALib)
+target_link_libraries(emDNA DNASim emDNALib)
 
 # emProBind app
 add_executable(emDNA_probind
     ${emProBindAppCppSources})
-target_link_libraries(emDNA_probind ${DNASIM_LIB_STATIC} emDNALib)
+target_link_libraries(emDNA_probind DNASim emDNALib)
 
 # tools - emDNA_parser
 add_executable(emDNA_parser
     src/tools/emDNA_parser.cpp)
-target_link_libraries(emDNA_parser ${DNASIM_LIB_STATIC} emDNALib)
+target_link_libraries(emDNA_parser DNASim emDNALib)
 
 # tools - emDNA_topology
 add_executable(emDNA_topology
     src/tools/emDNA_topology.cpp)
-target_link_libraries(emDNA_topology ${DNASIM_LIB_STATIC} emDNALib)
+target_link_libraries(emDNA_topology DNASim emDNALib)
 
 
 # --- install directives --- #

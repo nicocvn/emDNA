@@ -46,8 +46,8 @@
 #define emDNA_Minimizer_AlglibLBFGS_h
 
 
-#include <emDNA_Includes.h>
-#include <Minimizer_Alglib.h>
+#include "emDNA_Includes.h"
+#include "minim/Minimizer_Alglib.h"
 
 
 // Minimizer_AlglibLBFGS class

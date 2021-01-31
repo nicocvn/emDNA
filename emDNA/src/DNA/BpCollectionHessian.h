@@ -8,7 +8,7 @@
 #define emDNA_BpCollectionHessian_h
 
 
-#include <StepBlock.h>
+#include "DNA/StepBlock.h"
 class BpCollection;
 class IndexManager;
 

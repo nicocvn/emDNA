@@ -2,9 +2,9 @@
 // Juan Wei, Nicolas Clauvelin
 
 
-#include <DNAElectrostaticsParams.h>
-#include <BpCollection.h>
-#include <BpCollectionElectrostaticEnergy.h>
+#include "DNA/DNAElectrostaticsParams.h"
+#include "DNA/BpCollection.h"
+#include "DNA/BpCollectionElectrostaticEnergy.h"
 
 Real
 BpCollectionElectrostaticEnergy::electrostatic_energy(const BpCollection&

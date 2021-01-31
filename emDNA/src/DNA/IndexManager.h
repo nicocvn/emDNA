@@ -13,9 +13,9 @@
 #define emDNA_IndexManager_h
 
 
-#include <BpStepDofs.h>
-#include <BpStepParams.h>
-#include <IndexPair.h>
+#include "DNA/BpStepDofs.h"
+#include "DNA/BpStepParams.h"
+#include "DNA/IndexPair.h"
 
 
 // iterators typedefs

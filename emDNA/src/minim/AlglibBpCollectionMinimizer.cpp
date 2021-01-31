@@ -2,10 +2,10 @@
 // Nicolas Clauvelin
 
 
-#include <BpCollection_Interface.h>
-#include <Minimizer_AlglibCG.h>
-#include <Minimizer_AlglibLBFGS.h>
-#include <AlglibBpCollectionMinimizer.h>
+#include "DNA/BpCollection_Interface.h"
+#include "minim/Minimizer_AlglibCG.h"
+#include "minim/Minimizer_AlglibLBFGS.h"
+#include "minim/AlglibBpCollectionMinimizer.h"
 
 
 // static alglib minimization method

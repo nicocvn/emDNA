@@ -5,7 +5,7 @@
 #include <emDNA_Utils.h>
 #include <CommandLineElements.h>
 #include <emDNA_CommandLine.h>
-#include <SequenceDepenceModels.h>
+#include <DNASim.h>
 
 
 // boolean strings

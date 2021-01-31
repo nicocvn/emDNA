@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <LegoBender.h>
+#include "lego/LegoBender.h"
 
 
 // class constructor with full initialization

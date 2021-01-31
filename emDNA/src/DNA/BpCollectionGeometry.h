@@ -10,8 +10,8 @@
 #define emDNA_BpCollectionGeometry_h
 
 
-#include <BpGeometryFunctions.h>
-#include <BpCollection.h>
+#include "DNA/BpGeometryFunctions.h"
+#include "DNA/BpCollection.h"
 using namespace BpGeometryFunctions;
 class StepBlock;
 

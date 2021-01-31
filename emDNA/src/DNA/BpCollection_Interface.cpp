@@ -2,10 +2,10 @@
 // Nicolas Clauvelin
 
 
-#include <BpCollectionElasticEnergy.h>
-#include <BpCollectionElectrostaticEnergy.h>
-#include <BpCollectionGradient.h>
-#include <BpCollection_Interface.h>
+#include "DNA/BpCollectionElasticEnergy.h"
+#include "DNA/BpCollectionElectrostaticEnergy.h"
+#include "DNA/BpCollectionGradient.h"
+#include "DNA/BpCollection_Interface.h"
 
 
 // bp collection accessor/modifier

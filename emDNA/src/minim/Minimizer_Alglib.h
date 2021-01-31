@@ -5,7 +5,7 @@
 #define emDNA_Minimizer_Alglib_h
 
 
-#include <Alglib_Includes.h>
+#include "minim/Alglib_Includes.h"
 
 
 // enum for return code

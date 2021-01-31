@@ -9,7 +9,7 @@
 #define emDNA_LegoTwister_h
 
 
-#include <LegoProtein.h>
+#include "lego/LegoProtein.h"
 
 
 class LegoTwister final : public LegoProtein {

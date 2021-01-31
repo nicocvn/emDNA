@@ -20,7 +20,7 @@
 
 // needed for external force field
 #include <emDNA_Serialization.h>
-#include <DNASimArchive.h>
+#include <DNASim.h>
 
 // needed for exception
 #include <Alglib_Includes.h>

@@ -10,7 +10,7 @@
 #define emDNA_AnchoredBpCollection_h
 
 
-#include <BpCollection_Interface.h>
+#include "DNA/BpCollection_Interface.h"
 
 
 class AnchoredBpCollection final : public BpCollection_Interface {

@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <BpCollection.h>
+#include "DNA/BpCollection.h"
 
 
 // instanciation from a set of base pairs

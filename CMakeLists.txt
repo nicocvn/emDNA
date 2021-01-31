@@ -34,6 +34,7 @@ set(CMAKE_C_STANDARD 99)
 # --- Project components ---
 
 # Dependencies.
+include(deps/alglib.cmake)
 include(deps/cereal.cmake)
 include(deps/eigen.cmake)
 include(deps/googletest.cmake)
@@ -41,3 +42,6 @@ include(deps/nanoflann.cmake)
 
 # DNASim
 add_subdirectory(DNASim/)
+
+# emDNA
+add_subdirectory(emDNA/)

@@ -2,9 +2,9 @@
 // Nicolas Clauvelin
 
 
-#include <BpCollectionGeometry.h>
-#include <BpCollectionGradient.h>
-#include <PullingBpCollection.h>
+#include "DNA/BpCollectionGeometry.h"
+#include "DNA/BpCollectionGradient.h"
+#include "DNA/PullingBpCollection.h"
 
 
 // class default constructor

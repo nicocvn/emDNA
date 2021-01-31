@@ -10,7 +10,7 @@
 #define emDNA_ClampedBpCollection_h
 
 
-#include <BpCollection_Interface.h>
+#include "DNA/BpCollection_Interface.h"
 
 
 class ClampedBpCollection final : public BpCollection_Interface {

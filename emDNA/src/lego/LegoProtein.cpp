@@ -2,5 +2,5 @@
 // Nicolas Clauvelin
 
 
-#include <LegoProtein.h>
+#include "lego/LegoProtein.h"
 

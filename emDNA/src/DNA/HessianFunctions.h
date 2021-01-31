@@ -11,7 +11,7 @@
 #define emDNA_HessianFunctions_h
 
 
-#include <StepBlock.h>
+#include "DNA/StepBlock.h"
 class StepGradient;
 class BpCollection;
 class IndexManager;

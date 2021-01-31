@@ -46,8 +46,8 @@
 #define emDNA_Minimizer_AlglibCG_h
 
 
-#include <emDNA_Includes.h>
-#include <Minimizer_Alglib.h>
+#include "emDNA_Includes.h"
+#include "minim/Minimizer_Alglib.h"
 
 
 
