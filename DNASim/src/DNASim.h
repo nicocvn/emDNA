@@ -36,8 +36,6 @@
 #include "geometry/CurveTopology.h"
 #include "geometry/CylinderShape.h"
 #include "geometry/DiscreteRibbon.h"
-#include "geometry/ODE_Includes.h"
-#include "geometry/PlyMeshGenerator.h"
 #include "geometry/Segment.h"
 #include "geometry/Shape.h"
 #include "geometry/SphereShape.h"
