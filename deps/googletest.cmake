@@ -27,7 +27,4 @@ if(NOT TARGET gtest)
     target_compile_options(gtest PRIVATE "-w")
     target_compile_options(gtest_main PRIVATE "-w")
 
-    # Prevent gmock, gmock_main, and gtest_main.
-    set_property(TARGET gtest_main PROPERTY EXCLUDE_FROM_ALL TRUE)
-
 endif()

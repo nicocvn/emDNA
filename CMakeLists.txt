@@ -35,6 +35,7 @@ set(CMAKE_C_STANDARD 99)
 
 # Dependencies.
 include(deps/googletest.cmake)
+include(deps/cereal.cmake)
 
 # DNASim
 add_subdirectory(DNASim/)

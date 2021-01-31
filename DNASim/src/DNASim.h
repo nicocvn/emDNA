@@ -83,4 +83,11 @@
 #include "simulations/Trigger.h"
 
 
+// Register polymorphic types for Cereal serialization.
+CEREAL_REGISTER_TYPE(DNASim::SphereShape);
+CEREAL_REGISTER_TYPE(DNASim::CylinderShape);
+CEREAL_REGISTER_POLYMORPHIC_RELATION(DNASim::Shape, DNASim::SphereShape)
+CEREAL_REGISTER_POLYMORPHIC_RELATION(DNASim::Shape, DNASim::CylinderShape)
+
+
 #endif    // EMDNA_DNASIM_H
