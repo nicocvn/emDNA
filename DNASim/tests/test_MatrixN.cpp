@@ -2,9 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <VectorN.h>
-#include <MatrixN.h>
-#include <test_MatrixN.h>
+#include "test_MatrixN.h"
+#include <DNASim.h>
 using namespace DNASim;
 
 

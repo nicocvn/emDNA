@@ -2,12 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <Vector3.h>
-#include <AffineTransformation.h>
-#include <Triad.h>
-#include <BpGeometry.h>
-#include <StepParameters.h>
-#include <test_StepParameters.h>
+#include "test_StepParameters.h"
+#include <DNASim.h>
 using namespace DNASim;
 
 

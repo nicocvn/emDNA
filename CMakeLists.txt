@@ -33,5 +33,8 @@ set(CMAKE_C_STANDARD 99)
 
 # --- Project components ---
 
+# Dependencies.
+include(deps/googletest.cmake)
+
 # DNASim
 add_subdirectory(DNASim/)

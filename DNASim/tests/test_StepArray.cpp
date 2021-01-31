@@ -2,10 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <Vector3.h>
-#include <Triad.h>
-#include <StepArray.h>
-#include <test_StepArray.h>
+#include "test_StepArray.h"
+#include <DNASim.h>
 using namespace DNASim;
 
 

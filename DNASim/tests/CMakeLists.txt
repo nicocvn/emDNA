@@ -1,61 +1,40 @@
-# DNASimTests CMake
+# ---------------------------------------------------------------------------- #
+# DNASim tests
+#
+# Nicolas Clauvelin (n.clauvelin@gmail.com)
+#
+# ---------------------------------------------------------------------------- #
 
 
-# --- CMake gobal directives ---
+# Tests sources.
+set(DNASim_tests_SOURCES
+    test_AffineTransformation.cpp
+    #test_CollisionDetection.cpp
+    test_CurveTopology.cpp
+    #test_DNASim.cpp
+    test_DNASimArchive.cpp
+    test_DiscreteRibbon.cpp
+    test_EnhancedString.cpp
+    test_MatrixN.cpp
+    test_PRN.cpp
+    test_PointCloudKdTree.cpp
+    test_SparseIndex.cpp
+    test_StepArray.cpp
+    test_StepParameters.cpp
+    test_Triad.cpp
+    test_Vector3.cpp
+    test_VectorN.cpp
+    )
 
-cmake_minimum_required (VERSION 2.6)
+# Unit tests executable.
+add_executable(DNASim_tests ${DNASim_tests_SOURCES})
 
-
-# --- DNASim project ---
-
-project (DNASimTests CXX)
-include (${CMAKE_SOURCE_DIR}/DNASimCommon.cmake)
-
-
-# --- build type options ---
-# disable googletest threading
-add_definitions(-DGTEST_HAS_PTHREAD=0 -DGTEST_USE_OWN_TR1_TUPLE=1)
-
-
-# --- source tree directives --- #
-
-# add all source directories
-set (SourceDirectories
-	.
-	)
-set (GtestDirectory
-	gtest)
-
-# cpp files list
-append_files (DNASimTestsCppSources "*cpp" ${SourceDirectories})
-append_files (GtestCppSources "*cc" ${GtestDirectory})
-
-# include directories
-include_directories (BEFORE .)
-include_directories (BEFORE ../src)
-include_directories (BEFORE ../src/dna)
-include_directories (BEFORE ../src/file_io)
-include_directories (BEFORE ../src/geometry)
-include_directories (BEFORE ../src/maths)
-include_directories (BEFORE ../src/prn-generators)
-include_directories (BEFORE ../src/serialization)
-include_directories (BEFORE ../src/simulations)
-include_directories (BEFORE ../deps/)
-
-# ODE support option
-option (DNASIM_ODE_COLLISION "Include ODE collision detection." OFF)
-if (DNASIM_ODE_COLLISION)
-
-	# macro and headers
-	add_definitions(-DWITH_ODE_COLLISION)
-	include_directories (BEFORE deps/opende/include)
-	
-endif (DNASIM_ODE_COLLISION)
+# Linking.
+target_link_libraries(DNASim_tests PUBLIC gtest_main DNASim)
+# todo: remove once Eigen is better managed as a dependency
+target_include_directories(DNASim_tests PUBLIC ../deps)
 
 
-# --- target directives ---
-
-link_directories (${CMAKE_BINARY_DIR})
-add_executable (DNASimTests ${DNASimTestsCppSources} ${GtestCppSources})
-target_link_libraries (DNASimTests DNASim)
-
+# Install directives.
+install(TARGETS DNASim_tests
+        RUNTIME DESTINATION "bin/${CMAKE_BUILD_TYPE}")

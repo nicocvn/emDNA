@@ -2,8 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <EnhancedString.h>
-#include <test_EnhancedString.h>
+#include "test_EnhancedString.h"
+#include <DNASim.h>
 using namespace DNASim;
 
 

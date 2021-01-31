@@ -7,6 +7,7 @@
 
 
 #include <gtest/gtest.h>
+#include <DNASim.h>
 using namespace DNASim;
 
 

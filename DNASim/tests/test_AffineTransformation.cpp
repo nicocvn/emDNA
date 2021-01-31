@@ -2,9 +2,9 @@
 // Nicolas Clauvelin
 
 
-#include <Vector3.h>
-#include <AffineTransformation.h>
-#include <test_AffineTransformation.h>
+
+#include "test_AffineTransformation.h"
+#include <DNASim.h>
 using namespace DNASim;
 
 

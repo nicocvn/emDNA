@@ -2,11 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <Segment.h>
-#include <CurveTopology.h>
-#include <Triad.h>
-#include <DiscreteRibbon.h>
-#include <test_DiscreteRibbon.h>
+#include "test_DiscreteRibbon.h"
+#include <DNASim.h>
 using namespace DNASim;
 
 

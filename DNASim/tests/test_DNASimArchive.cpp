@@ -2,9 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <DNASimArchive.h>
-#include <DNASimSerialization.h>
-#include <test_DNASimArchive.h>
+#include "test_DNASimArchive.h"
 
 
 // types registration

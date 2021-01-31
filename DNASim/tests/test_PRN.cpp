@@ -2,9 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <PRN_Real.h>
-#include <PRN_Integer.h>
-#include <test_PRN.h>
+#include "test_PRN.h"
+#include <DNASim.h>
 using namespace DNASim;
 
 

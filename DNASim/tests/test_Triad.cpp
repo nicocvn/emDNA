@@ -2,11 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <Vector3.h>
-#include <Matrix4.h>
-#include <AffineTransformation.h>
-#include <Triad.h>
-#include <test_Triad.h>
+#include "test_Triad.h"
+#include <DNASim.h>
 using namespace DNASim;
 
 

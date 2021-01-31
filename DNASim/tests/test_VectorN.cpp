@@ -2,10 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <PRN_Real.h>
-#include <MatrixN.h>
-#include <VectorN.h>
-#include <test_VectorN.h>
+#include "test_VectorN.h"
+#include <DNASim.h>
 using namespace DNASim;
 
 
