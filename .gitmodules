@@ -4,3 +4,6 @@
 [submodule "deps/cereal"]
 	path = deps/cereal
 	url = git@github.com:USCiLab/cereal.git
+[submodule "deps/nanoflann"]
+	path = deps/nanoflann
+	url = git@github.com:jlblancoc/nanoflann.git

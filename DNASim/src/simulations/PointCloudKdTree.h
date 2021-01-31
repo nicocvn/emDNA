@@ -17,7 +17,7 @@
 
 
 #include "simulations/PointCloudAdaptor.h"
-#include <nanoflann/nanoflann.hpp>
+#include <nanoflann.hpp>
 
 
 namespace DNASim {

@@ -38,7 +38,7 @@ endforeach()
 
 # Static library.
 add_library(DNASim STATIC ${DNASim_SOURCES})
-target_link_libraries(DNASim PUBLIC cereal)
+target_link_libraries(DNASim PUBLIC cereal nanoflann)
 # todo: edit once Eigen is better managed as a dependency
 target_include_directories(DNASim PUBLIC ${DNASim_HEADERS_DIRS} ../deps)
 
