@@ -7,3 +7,6 @@
 [submodule "deps/nanoflann"]
 	path = deps/nanoflann
 	url = git@github.com:jlblancoc/nanoflann.git
+[submodule "deps/eigen"]
+	path = deps/eigen
+	url = git@github.com:eigenteam/eigen-git-mirror.git
