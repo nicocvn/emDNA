@@ -2,9 +2,9 @@
 // Nicolas Clauvelin
 
 
-#include <Vector3.h>
-#include <EnhancedString.h>
-#include <CylinderShape.h>
+#include "maths/Vector3.h"
+#include "file_io/EnhancedString.h"
+#include "geometry/CylinderShape.h"
 
 
 namespace DNASim {
@@ -106,35 +106,5 @@ namespace DNASim {
 		
 	};
 
-
-#ifdef WITH_ODE_COLLISION
-	// ODE geom building method
-	dGeomID CylinderShape::ode_geom() const {
-		
-		// create cylinder geom
-		dGeomID cylinder = dCreateCylinder(0, m_radius, m_height);
-		
-		// set position
-		const Vector3& pos = position();
-		dGeomSetPosition(cylinder, pos[X], pos[Y], pos[Z]);
-		
-		// set orientation
-		const Matrix4& frame_mat = frame().matrix_representation();
-		dMatrix3 orientation;
-		orientation[0]	= frame_mat(0,0);
-		orientation[1]	= frame_mat(0,1);
-		orientation[2]	= frame_mat(0,2);
-		orientation[4]	= frame_mat(1,0);
-		orientation[5]	= frame_mat(1,1);
-		orientation[6]	= frame_mat(1,2);
-		orientation[8]	= frame_mat(2,0);
-		orientation[9]	= frame_mat(2,1);
-		orientation[10]	= frame_mat(2,2);
-		dGeomSetRotation(cylinder, orientation);
-		return cylinder;
-		
-	};
-#endif	// WITH_ODE_COLLISION
-	
 	
 }

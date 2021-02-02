@@ -13,12 +13,13 @@
 #define DNASim_BpStepTwistDensity_h
 
 
-#include <DNASim_Includes.h>
+#include "DNASim_Includes.h"
 
 
 namespace DNASim {
 
 
+    class Segment;
     class Triad;
     typedef Triad BasePair;
 

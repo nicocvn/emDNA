@@ -9,7 +9,7 @@
 #define MC_DNA_Sequence_h
 
 
-#include <DNASim_Includes.h>
+#include "DNASim_Includes.h"
 
 
 namespace DNASim {

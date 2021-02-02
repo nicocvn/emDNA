@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <DNASimArchive.h>
+#include "serialization/DNASimArchive.h"
 
 
 namespace DNASim {

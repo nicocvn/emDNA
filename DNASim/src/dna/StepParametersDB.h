@@ -9,7 +9,7 @@
 #define MC_DNA_StepParametersDB_h
 
 
-#include <StepParameters.h>
+#include "dna/StepParameters.h"
 
 
 namespace DNASim {

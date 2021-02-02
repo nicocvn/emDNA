@@ -2,10 +2,10 @@
 // Nicolas Clauvelin
 
 
-#include <Matrix4.h>
-#include <Matrix3.h>
-#include <Vector3.h>
-#include <AffineTransformation.h>
+#include "maths/Matrix4.h"
+#include "maths/Matrix3.h"
+#include "maths/Vector3.h"
+#include "maths/AffineTransformation.h"
 
 
 namespace DNASim {

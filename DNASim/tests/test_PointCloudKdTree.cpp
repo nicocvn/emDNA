@@ -2,10 +2,9 @@
 // Nicolas Clauvelin
 
 
-#include <PRN_Real.h>
-#include <AffineTransformation.h>
-#include <PointCloudKdTree.h>
-#include <test_PointCloudKdTree.h>
+#include "test_PointCloudKdTree.h"
+#include <DNASim.h>
+using namespace DNASim;
 
 
 namespace {

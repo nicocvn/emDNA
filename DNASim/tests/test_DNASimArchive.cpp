@@ -2,15 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <DNASimArchive.h>
-#include <DNASimSerialization.h>
-#include <test_DNASimArchive.h>
-
-
-// types registration
-CEREAL_REGISTER_TYPE(DNASim::Shape);
-CEREAL_REGISTER_TYPE(DNASim::SphereShape);
-CEREAL_REGISTER_TYPE(DNASim::CylinderShape);
+#include "test_DNASimArchive.h"
 
 
 namespace {
@@ -122,9 +114,9 @@ namespace {
         Real cylinder_height = Real(4.1);
 
         // sphere and cylinder
-        std::shared_ptr<Shape> sphere =
+        std::shared_ptr<SphereShape> sphere =
         std::make_shared<SphereShape>(f_shape.origin(), sphere_radius);
-        std::shared_ptr<Shape> cylinder =
+        std::shared_ptr<CylinderShape> cylinder =
         std::make_shared<CylinderShape>(f_shape,
                                         cylinder_radius, cylinder_height);
 

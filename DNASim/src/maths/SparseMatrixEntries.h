@@ -13,7 +13,7 @@
 #define DNASim_SparseMatrixEntries_h
 
 
-#include <Eigen_Includes.h>
+#include "maths/Eigen_Includes.h"
 
 
 namespace DNASim {

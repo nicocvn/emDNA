@@ -2,11 +2,11 @@
 // Nicolas Clauvelin
 
 
-#include <Matrix3.h>
-#include <Vector3.h>
-#include <AffineTransformation.h>
-#include <EnhancedString.h>
-#include <Triad.h>
+#include "maths/Matrix3.h"
+#include "maths/Vector3.h"
+#include "maths/AffineTransformation.h"
+#include "file_io/EnhancedString.h"
+#include "maths/Triad.h"
 
 
 namespace DNASim {

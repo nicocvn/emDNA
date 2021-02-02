@@ -9,7 +9,7 @@
 #define DNASim_SphereShape_h
 
 
-#include <Shape.h>
+#include "geometry/Shape.h"
 
 
 namespace DNASim {
@@ -47,16 +47,11 @@ namespace DNASim {
 		void set_radius(Real R);
 		
 		// inside point checking method
-		bool is_point_inside(const Vector3& pt) const;
+		bool is_point_inside(const Vector3& pt) const override;
 		
 		// mathematica output method
 		void mm_output(std::ostream& output,
-					   const std::string& opts = "Blue") const;
-
-		// ODE geom building method
-#ifdef WITH_ODE_COLLISION
-		dGeomID ode_geom() const override;
-#endif	// WITH_ODE_COLLISION
+					   const std::string& opts = "Blue") const override;
 
 
 	private:

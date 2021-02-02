@@ -2,8 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <PDBAtomRecord.h>
-#include <PDBAtom.h>
+#include "pdb/PDBAtomRecord.h"
+#include "pdb/PDBAtom.h"
 
 
 namespace DNASim {

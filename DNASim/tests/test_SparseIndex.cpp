@@ -2,8 +2,9 @@
 // Nicolas Clauvelin
 
 
-#include <SparseIndex.h>
-#include <test_SparseIndex.h>
+#include "test_SparseIndex.h"
+#include <DNASim.h>
+using namespace DNASim;
 
 
 namespace {

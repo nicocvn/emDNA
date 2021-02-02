@@ -2,9 +2,9 @@
 // Nicolas Clauvelin
 
 
-#include <EnhancedString.h>
-#include <FileException.h>
-#include <OutputFileHandler.h>
+#include "file_io/EnhancedString.h"
+#include "file_io/FileException.h"
+#include "file_io/OutputFileHandler.h"
 
 
 namespace DNASim {

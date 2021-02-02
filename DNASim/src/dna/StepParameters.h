@@ -9,7 +9,7 @@
 #define DNASim_StepParameters_h
 
 
-#include <VectorN.h>
+#include "maths/VectorN.h"
 
 
 // enum type for step parameters

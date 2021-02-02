@@ -36,8 +36,8 @@
 #include <sys/stat.h>
 
 
-#include <DNASim_Defines.h>
-#include <DNASim_Debug.h>
+#include "DNASim_Defines.h"
+#include "DNASim_Debug.h"
 
 
 #endif	// DNASim_Includes_h

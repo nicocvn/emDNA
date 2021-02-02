@@ -11,23 +11,23 @@
 #define emDNA_SequenceDepenceModels_h
 
 
-#include <DNASim_Includes.h>
+#include "DNASim_Includes.h"
 
 
 namespace DNASim {
 
 
     // list of sequence dependence model - step parameters
-    #include <StepParameters_IdealDNA.h>
-    #include <StepParameters_IdealDNA_304.h>
-    #include <StepParameters_AnisoDNA.h>
-    #include <StepParameters_AnisoDNA_304.h>
-    #include <StepParameters_Olson1998.h>
+    #include "dna/StepParameters_IdealDNA.h"
+    #include "dna/StepParameters_IdealDNA_304.h"
+    #include "dna/StepParameters_AnisoDNA.h"
+    #include "dna/StepParameters_AnisoDNA_304.h"
+    #include "dna/StepParameters_Olson1998.h"
 
     // list of sequence dependence model - force constants
-    #include <ForceConstants_IdealDNA.h>
-    #include <ForceConstants_AnisoDNA.h>
-    #include <ForceConstants_Olson1998.h>
+    #include "dna/ForceConstants_IdealDNA.h"
+    #include "dna/ForceConstants_AnisoDNA.h"
+    #include "dna/ForceConstants_Olson1998.h"
 
 
     // sequence-dependence model structure

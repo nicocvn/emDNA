@@ -10,7 +10,7 @@
 #define DNASim_Enhanced_String_h
 
 
-#include <DNASim_Includes.h>
+#include "DNASim_Includes.h"
 
 
 namespace DNASim {

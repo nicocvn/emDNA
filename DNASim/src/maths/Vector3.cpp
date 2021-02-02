@@ -2,8 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <EnhancedString.h>
-#include <Vector3.h>
+#include "file_io/EnhancedString.h"
+#include "maths/Vector3.h"
 
 
 namespace DNASim {

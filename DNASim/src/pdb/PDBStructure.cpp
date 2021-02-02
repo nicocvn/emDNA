@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <PDBStructure.h>
+#include "pdb/PDBStructure.h"
 
 
 namespace DNASim {

@@ -2,13 +2,13 @@
 // Nicolas Clauvelin
 
 
-#include <EnhancedString.h>
-#include <InputFileHandler.h>
-#include <Vector3.h>
-#include <StepParameters.h>
-#include <Triad.h>
-#include <Sequence.h>
-#include <Parser_x3DNA.h>
+#include "file_io/EnhancedString.h"
+#include "file_io/InputFileHandler.h"
+#include "maths/Vector3.h"
+#include "dna/StepParameters.h"
+#include "maths/Triad.h"
+#include "dna/Sequence.h"
+#include "dna/Parser_x3DNA.h"
 
 
 namespace DNASim {

@@ -2,12 +2,12 @@
 // Nicolas Clauvelin
 
 
-#include <EnhancedString.h>
-#include <Sequence.h>
-#include <StepParametersDB.h>
+#include "file_io/EnhancedString.h"
+#include "dna/Sequence.h"
+#include "dna/StepParametersDB.h"
 
 // sequence dependence models
-#include <SequenceDepenceModels.h>
+#include "dna/SequenceDepenceModels.h"
 
 
 namespace DNASim {

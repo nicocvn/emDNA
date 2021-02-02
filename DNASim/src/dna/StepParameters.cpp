@@ -2,11 +2,11 @@
 // Nicolas Clauvelin
 
 
-#include <Vector3.h>
-#include <Matrix4.h>
-#include <Triad.h>
-#include <StepParameters.h>
-#include <BpGeometry.h>
+#include "maths/Vector3.h"
+#include "maths/Matrix4.h"
+#include "maths/Triad.h"
+#include "dna/StepParameters.h"
+#include "dna/BpGeometry.h"
 
 
 // step parameters vector dimension

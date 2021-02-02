@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <Trigger.h>
+#include "simulations/Trigger.h"
 
 
 namespace DNASim {

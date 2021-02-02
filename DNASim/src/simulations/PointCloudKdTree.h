@@ -16,8 +16,8 @@
 #define DNASim_PointCloudKdTree_h
 
 
-#include <PointCloudAdaptor.h>
-#include <nanoflann/nanoflann.hpp>
+#include "simulations/PointCloudAdaptor.h"
+#include <nanoflann.hpp>
 
 
 namespace DNASim {

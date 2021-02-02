@@ -9,7 +9,7 @@
 #define DNASim_CylinderShape_h
 
 
-#include <Shape.h>
+#include "geometry/Shape.h"
 
 
 namespace DNASim {
@@ -57,12 +57,7 @@ namespace DNASim {
 		// mathematica output method
 		void mm_output(std::ostream& output,
 					   const std::string& opts = "Blue") const override;
-	
-#ifdef WITH_ODE_COLLISION
-		// ODE geom building method
-		dGeomID ode_geom() const override;
-#endif	// WITH_ODE_COLLISION
-		
+
 		
 	private:
 		

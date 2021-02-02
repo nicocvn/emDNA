@@ -2,13 +2,13 @@
 // Nicolas Clauvelin
 
 
-#include <EnhancedString.h>
-#include <VectorN.h>
-#include <Sequence.h>
-#include <ForceConstantsDB.h>
+#include "file_io/EnhancedString.h"
+#include "maths/VectorN.h"
+#include "dna/Sequence.h"
+#include "dna/ForceConstantsDB.h"
 
 // sequence dependence models
-#include <SequenceDepenceModels.h>
+#include "dna/SequenceDepenceModels.h"
 
 
 namespace DNASim {

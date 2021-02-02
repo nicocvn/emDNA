@@ -18,23 +18,23 @@
 #define DNASim_DNASimSerialization_h
 
 
-#include <Cereal_Includes.h>
-#include <EnhancedString.h>
-#include <Vector3.h>
-#include <VectorN.h>
-#include <Matrix3.h>
-#include <Matrix4.h>
-#include <MatrixN.h>
-#include <Triad.h>
-#include <AffineTransformation.h>
-#include <StepParameters.h>
-#include <StepArray.h>
-#include <SphereShape.h>
-#include <CylinderShape.h>
-#include <OptionsManager.h>
-#include <Sequence.h>
-#include <StepParametersDB.h>
-#include <ForceConstantsDB.h>
+#include "serialization/Cereal_Includes.h"
+#include "file_io/EnhancedString.h"
+#include "maths/Vector3.h"
+#include "maths/VectorN.h"
+#include "maths/Matrix3.h"
+#include "maths/Matrix4.h"
+#include "maths/MatrixN.h"
+#include "maths/Triad.h"
+#include "maths/AffineTransformation.h"
+#include "dna/StepParameters.h"
+#include "dna/StepArray.h"
+#include "geometry/SphereShape.h"
+#include "geometry/CylinderShape.h"
+#include "simulations/OptionsManager.h"
+#include "dna/Sequence.h"
+#include "dna/StepParametersDB.h"
+#include "dna/ForceConstantsDB.h"
 
 
 namespace DNASim {

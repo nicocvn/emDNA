@@ -2,8 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <AffineTransformation.h>
-#include <Segment.h>
+#include "maths/AffineTransformation.h"
+#include "geometry/Segment.h"
 
 
 namespace DNASim {

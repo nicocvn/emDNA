@@ -8,7 +8,7 @@
 #define DNASim_VectorN_h
 
 
-#include <Eigen_Includes.h>
+#include "maths/Eigen_Includes.h"
 
 
 namespace DNASim {

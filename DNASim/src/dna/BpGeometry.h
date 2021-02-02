@@ -13,7 +13,7 @@
 #define DNASim_BpGeometry_h
 
 
-#include <DNASim_Includes.h>
+#include "DNASim_Includes.h"
 
 
 namespace DNASim {
@@ -22,6 +22,7 @@ namespace DNASim {
 	class Vector3;
 	class Matrix4;
 	class StepParameters;
+	class Triad;
 	
 	
 namespace BpGeometry {	

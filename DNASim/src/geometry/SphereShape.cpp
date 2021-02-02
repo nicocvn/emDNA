@@ -2,9 +2,9 @@
 // Nicolas Clauvelin
 
 
-#include <Vector3.h>
-#include <EnhancedString.h>
-#include <SphereShape.h>
+#include "maths/Vector3.h"
+#include "file_io/EnhancedString.h"
+#include "geometry/SphereShape.h"
 
 
 namespace DNASim {
@@ -75,23 +75,6 @@ namespace DNASim {
 		
 	};
 
-
-#ifdef WITH_ODE_COLLISION
-	// ODE geom building method
-	dGeomID SphereShape::ode_geom() const {
-		
-		// create sphere geom
-		dGeomID sphere = dCreateSphere(0, m_radius);
-		
-		// set poisition
-		const Vector3& pos = position();
-		dGeomSetPosition(sphere, pos[X], pos[Y], pos[Z]);
-		
-		return sphere;
-		
-	};
-#endif	// WITH_ODE_COLLISION
-	
 	
 }
 

@@ -6,7 +6,7 @@
 #define DNASim_PDBResidue_h
 
 
-#include <PDBAtom.h>
+#include "pdb/PDBAtom.h"
 
 
 namespace DNASim  {

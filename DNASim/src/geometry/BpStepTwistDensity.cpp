@@ -2,10 +2,10 @@
 // Nicolas Clauvelin
 
 
-#include <Segment.h>
-#include <Triad.h>
-#include <CurveTopology.h>
-#include <BpStepTwistDensity.h>
+#include "geometry/Segment.h"
+#include "maths/Triad.h"
+#include "geometry/CurveTopology.h"
+#include "geometry/BpStepTwistDensity.h"
 
 
 namespace DNASim {

@@ -11,8 +11,7 @@
 #define DNASim_Shape_h
 
 
-#include <ODE_Includes.h>
-#include <Triad.h>
+#include "maths/Triad.h"
 
 
 namespace DNASim {
@@ -52,28 +51,6 @@ namespace DNASim {
 		virtual void mm_output(std::ostream& output,
 							   const std::string& opts = "Blue") const =0;
 
-#ifdef WITH_ODE_COLLISION
-		// if using ODE collision detection:
-		// - Shape::ode_init should be called before any collision detection
-		// - Shape::ode_close should be called when no more collision detection
-		// will be performed
-		// - should be thread-safe
-		
-		// ODE library init
-		static void ode_init();
-		
-		// ODE library closing
-		static void ode_close();
-		
-		// ODE geom building method
-		virtual dGeomID ode_geom() const =0;
-		
-		// collision detection method
-		// return true if collision is detected
-        static bool ode_is_colliding(const Shape_Ptr__v& shapes_set_1,
-                                     const Shape_Ptr__v& shapes_set_2);
-#endif	// WITH_ODE_COLLISION
-		
 		
 	protected:
 		

@@ -9,7 +9,7 @@
 #define DNASim_Segment_h
 
 
-#include <Vector3.h>
+#include "maths/Vector3.h"
 
 
 namespace DNASim {
