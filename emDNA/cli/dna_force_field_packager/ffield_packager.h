@@ -16,9 +16,7 @@
 #define DNASim_ffield_packager_h
 
 
-#include <DNASim_Includes.h>
-#include <DNASimSerialization.h>
-#include <DNASimArchive.h>
+#include <DNASim.h>
 using namespace DNASim;
 
 

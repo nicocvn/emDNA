@@ -1,16 +1,13 @@
 # ---------------------------------------------------------------------------- #
-# emDNA
+# emDNA cli
 #
 # Nicolas Clauvelin (n.clauvelin@gmail.com)
 #
 # ---------------------------------------------------------------------------- #
 
 
-# Library.
-add_subdirectory(src/)
-
-# Tests.
-add_subdirectory(tests/)
-
-# Command line tools.
-add_subdirectory(cli/)
+add_subdirectory(app/)
+add_subdirectory(dna_force_field_packager/)
+add_subdirectory(forceprobe/)
+add_subdirectory(optbinding/)
+add_subdirectory(tools/)

@@ -3,9 +3,7 @@
 
 
 #include <TCLAP_Includes.h>
-#include <LegoBender.h>
-#include <LegoTwister.h>
-#include <LegoTwistedBender.h>
+#include <emDNA.h>
 #include <emDNA_lego_gen.h>
 
 

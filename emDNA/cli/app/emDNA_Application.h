@@ -11,8 +11,8 @@
 
 #include <emDNA_CommandLine.h>
 #include <emDNA_LogFile.h>
-#include <BpCollection.h>
-#include <BpCollection_Interface.h>
+//#include <BpCollection.h>
+//#include <BpCollection_Interface.h>
 struct AlglibMinSettings;
 using AlglibMinSettings_Ptr = std::unique_ptr<const AlglibMinSettings>;
 

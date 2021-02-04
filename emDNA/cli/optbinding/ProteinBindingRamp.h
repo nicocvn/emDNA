@@ -6,7 +6,7 @@
 #define emDNA_ProteinBindingRamp_h
 
 
-#include <BpStepParams.h>
+#include <emDNA.h>
 
 
 class ProteinBindingRamp {

@@ -3,11 +3,11 @@
 
 
 #include <emDNA_CommandLine.h>
-#include <BpCollection.h>
-#include <IndexManager.h>
-#include <MinimizerAgent.h>
-#include <BpCollection_x3DNA.h>
-#include <BpCollectionElasticEnergy.h>
+//#include <BpCollection.h>
+//#include <IndexManager.h>
+//#include <MinimizerAgent.h>
+//#include <BpCollection_x3DNA.h>
+//#include <BpCollectionElasticEnergy.h>
 #include <emDNA_LogFile.h>
 
 

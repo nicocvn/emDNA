@@ -9,7 +9,7 @@
 #define emDNA_emDNA_LogFile_h
 
 
-#include <emDNA_Includes.h>
+#include <emDNA.h>
 class emDNA_CommandLine;
 class BpCollection;
 class MinimResults;

@@ -2,11 +2,9 @@
 // Nicolas Clauvelin
 
 
-#include <emDNA_Utils.h>
+#include <emDNA.h>
 #include <RampMinimizerEEDR.h>
 #include <RampMinimizerPulling.h>
-#include <BpCollection.h>
-#include <BpCollectionFactory.h>
 #include <emProBind.h>
 
 

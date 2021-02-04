@@ -5,25 +5,20 @@
 #include <emDNA_CommandLine.h>
 
 
-#include <BpCollection_x3DNA.h>
-#include <BpCollectionFactory.h>
-#include <MinimizerAgent.h>
-#include <BpCollectionElasticEnergy.h>
+#include <emDNA.h>
 #include <emDNA_CommandLine.h>
 #include <emDNA_Application.h>
 
 // bp collection interfaces
-#include <FreeBpCollection.h>
-#include <AnchoredBpCollection.h>
-#include <ClampedBpCollection.h>
-#include <PullingBpCollection.h>
+//#include <FreeBpCollection.h>
+//#include <AnchoredBpCollection.h>
+//#include <ClampedBpCollection.h>
+//#include <PullingBpCollection.h>
 
 // needed for external force field
-#include <emDNA_Serialization.h>
-#include <DNASim.h>
 
 // needed for exception
-#include <Alglib_Includes.h>
+//#include <Alglib_Includes.h>
 
 
 // class default constructor

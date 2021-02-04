@@ -39,6 +39,7 @@ include(deps/cereal.cmake)
 include(deps/eigen.cmake)
 include(deps/googletest.cmake)
 include(deps/nanoflann.cmake)
+include(deps/tclap.cmake)
 
 # DNASim
 add_subdirectory(DNASim/)

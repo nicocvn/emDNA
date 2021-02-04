@@ -3,9 +3,7 @@
 
 
 #include <TCLAP_Includes.h>
-#include <BpCollection.h>
-#include <BpCollection_x3DNA.h>
-#include <BpCollectionFactory.h>
+#include <emDNA.h>
 #include <emDNA_parser.h>
 
 

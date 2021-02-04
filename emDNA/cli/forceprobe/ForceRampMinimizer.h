@@ -6,7 +6,7 @@
 #define emDNA_ForceRampMinimizer_h
 
 
-#include <BpCollection.h>
+#include <emDNA.h>
 
 
 struct ForceRamp {

@@ -11,7 +11,7 @@
 #define emDNA_RampMinimizer_h
 
 
-#include <BpCollection.h>
+#include <emDNA.h>
 
 
 class RampMinimizer {

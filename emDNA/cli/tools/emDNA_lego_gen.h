@@ -6,7 +6,7 @@
 #define emDNA_emDNA_lego_gen_h
 
 
-#include <emDNA_Includes.h>
+#include <emDNA.h>
 class LegoProtein;
 
 

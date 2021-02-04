@@ -2,10 +2,9 @@
 // Nicolas Clauvelin
 
 
-#include <emDNA_Utils.h>
+#include <emDNA.h>
 #include <CommandLineElements.h>
 #include <emDNA_CommandLine.h>
-#include <DNASim.h>
 
 
 // boolean strings

@@ -3,8 +3,7 @@
 
 
 #include <TCLAP_Includes.h>
-#include <BpCollection.h>
-#include <BpCollectionFactory.h>
+#include <emDNA.h>
 #include <emDNA_topology.h>
 
 

@@ -2,9 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <emDNA_Utils.h>
-#include <BpCollection.h>
-#include <BpCollectionFactory.h>
+#include <emDNA.h>
 #include <ForceRampMinimizer.h>
 #include <emDNA_ForceProbe.h>
 

@@ -2,9 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <Minimizer_Alglib.h>
-#include <MinimizerAgent.h>
-#include <PullingBpCollection.h>
+#include <emDNA.h>
 #include <ProteinBindingRamp.h>
 #include <RampMinimizerPulling.h>
 
