@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="DNASim_tests" type="CMakeRunConfiguration" factoryName="Application" folderName="DNASim" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="emDNA" TARGET_NAME="DNASim_tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="emDNA" RUN_TARGET_NAME="DNASim_tests">
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>
