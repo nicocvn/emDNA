@@ -2,10 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <BpCollection.h>
-#include <IndexManager.h>
-#include <BpCollectionElasticEnergy.h>
-#include <utest_BpCollectionElasticEnergy.h>
+#include <emDNA.h>
+#include "utest_BpCollectionElasticEnergy.h"
 
 
 namespace {

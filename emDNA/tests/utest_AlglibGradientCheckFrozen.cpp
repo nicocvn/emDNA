@@ -2,12 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <FreeBpCollection.h>
-#include <AnchoredBpCollection.h>
-#include <ClampedBpCollection.h>
-#include <AlglibBpCollectionMinimizer.h>
-#include <Minimizer_AlglibLBFGS.h>
-#include <utest_AlglibGradientCheckFrozen.h>
+#include <emDNA.h>
+#include "utest_AlglibGradientCheckFrozen.h"
 
 
 #define GRADCHECK_STEP_SIZE Real(1e-4)

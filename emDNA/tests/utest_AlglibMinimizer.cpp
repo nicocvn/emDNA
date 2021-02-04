@@ -2,9 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <ClampedBpCollection.h>
-#include <AlglibBpCollectionMinimizer.h>
-#include <utest_AlglibMinimizer.h>
+#include <emDNA.h>
+#include "utest_AlglibMinimizer.h"
 
 
 namespace {

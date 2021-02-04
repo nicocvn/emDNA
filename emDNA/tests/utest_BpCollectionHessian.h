@@ -7,7 +7,7 @@
 
 
 #include <gtest/gtest.h>
-#include <BpStepParams.h>
+#include <emDNA.h>
 
 
 namespace {

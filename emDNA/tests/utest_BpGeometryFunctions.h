@@ -7,7 +7,7 @@
 
 
 #include <gtest/gtest.h>
-#include <BpGeometryFunctions.h>
+#include <emDNA.h>
 using namespace BpGeometryFunctions;
 
 

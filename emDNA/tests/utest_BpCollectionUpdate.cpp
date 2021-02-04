@@ -2,11 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <BpCollection.h>
-#include <utest_BpCollectionUpdate.h>
-
-
-#include <FreeBpCollection.h>
+#include <emDNA.h>
+#include "utest_BpCollectionUpdate.h"
 
 
 namespace {

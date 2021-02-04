@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <utest_BpGeometryFunctions.h>
+#include "utest_BpGeometryFunctions.h"
 
 
 namespace {

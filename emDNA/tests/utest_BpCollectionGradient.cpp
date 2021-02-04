@@ -2,10 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <IndexManager.h>
-#include <BpCollectionGeometry.h>
-#include <BpCollectionGradient.h>
-#include <utest_BpCollectionGradient.h>
+#include <emDNA.h>
+#include "utest_BpCollectionGradient.h"
 
 
 namespace {

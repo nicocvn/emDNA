@@ -2,11 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <IndexManager.h>
-#include <BpCollection.h>
-#include <HessianFunctions.h>
-#include <BpCollectionHessian.h>
-#include <utest_BpCollectionHessian.h>
+#include <emDNA.h>
+#include "utest_BpCollectionHessian.h"
 
 
 namespace {
@@ -51,7 +48,7 @@ namespace {
         BpCollection bp_coll =
         BpCollection::collection_from_bp_step_params(test_params, BasePair());
         bp_coll.set_collection_sequence("ATCG");
-        bp_coll.set_sequence_dependence_model("Olson1998");
+        bp_coll.set_sequence_dependence_model("Olson1998Legacy");
 
         // index manager
         IndexManager idx_mgr;
