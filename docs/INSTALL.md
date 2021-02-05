@@ -34,7 +34,7 @@ It is very likely that the project can be built on other setups (e.g. GCC+MinGW 
 emDNA includes various dependencies as submodule so the `--recursive` option is recommended when cloning the repository:
 
 ```
-git clone --recursive git@github.com:rty10/emDNA.git emDNA.git
+git clone --recursive git@github.com:nicocvn/emDNA.git emDNA.git
 ```
 
 
@@ -62,7 +62,7 @@ Note: because the project is based on CMake it is possible to pass additional co
 3. Build the project
 
     ```
-    cmake --build emDNA-build/ --config Release --parallel 2
+    $ cmake --build emDNA-build/ --config Release --parallel 2
     ```
 
     The value 2 used for `--parallel` indicates the number of jobs to use for the build process and it can be increased based on the number of cores/CPUs available on the system.
@@ -70,7 +70,7 @@ Note: because the project is based on CMake it is possible to pass additional co
 4. Install:
 
     ```
-    cmake --install emDNA-build/ --config Release --prefix emDNA-install/
+    $ cmake --install emDNA-build/ --config Release --prefix emDNA-install/
     ```
 
     This will install the various emDNA command-line tools in `/somewhere/emDNA-install/bin/Release` (or whatever build type was selected during configuration). The tools can then be moved/copied elsewhere.
