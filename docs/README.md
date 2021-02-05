@@ -1,1 +1,3 @@
 Coming soon ...
+
+[Build instructions](INSTALL.md)
