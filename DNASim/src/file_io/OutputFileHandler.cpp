@@ -44,22 +44,7 @@ namespace DNASim {
 		
 		//exceptions
 		m_output.exceptions(std::ofstream::badbit | std::ofstream::failbit);
-		
-		// create directory if needed
-		// unix only implementation
-		struct stat st;
-		if (stat(file_path().c_str(), &st) != 0) {
-			Integer chk = mkdir(file_path().c_str(), 0755);
-			if (chk != 0) {
-				FileException fex("OutputFileHandler::open() "
-								  "= failed to create directory for the output "
-								  "file:");
-				fex.add_info(full_file_name());
-				fex.report(std::cout);
-				exit(-1);
-			};
-		};
-		
+
 		// file opening
 		try {
 			m_output.open(full_file_name().c_str(), std::ios_base::out);

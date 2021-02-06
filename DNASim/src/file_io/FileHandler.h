@@ -33,7 +33,6 @@ namespace DNASim {
 		virtual bool is_eof() const =0;
 		
 		// file path methods
-		const std::string current_directory() const;
 		const std::string& file_path() const;
 		void set_file_path(const std::string& path);
 		

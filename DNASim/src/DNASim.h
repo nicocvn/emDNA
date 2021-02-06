@@ -6,6 +6,9 @@
 #define EMDNA_DNASIM_H
 
 
+#include "DNASim_Includes.h"
+
+
 // dna
 #include "dna/BpGeometry.h"
 #include "dna/ForceConstantsDB.h"

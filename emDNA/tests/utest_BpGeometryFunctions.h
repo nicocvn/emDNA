@@ -35,9 +35,9 @@ namespace {
             test_theta_angles_degen._Theta1Degree = FLOAT_INIT;
             test_theta_angles_degen._Theta2Degree = FLOAT_INIT;
             test_theta_angles_degen._Theta3Degree = Real(38.26);
-            test_euler_angles._ZetaRadian = Real(1.3364914653228088);
-            test_euler_angles._KappaRadian = Real(0.23295641214122734);
-            test_euler_angles._EtaRadian = Real(-0.6008351856071991);
+            test_euler_angles._ZetaRadian = Real(1.3364914653228088248);
+            test_euler_angles._KappaRadian = Real(0.23295641214122733698);
+            test_euler_angles._EtaRadian = Real(-0.60083518560719906265);
 
             // Xi matrix
             Real xielems[9];

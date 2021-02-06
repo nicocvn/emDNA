@@ -10,6 +10,9 @@
 
 
 // STL headers
+#if defined(_MSC_VER)
+#define _USE_MATH_DEFINES
+#endif // _MSC_VER
 #include <cmath>
 #include <cstdio>
 #include <cassert>
@@ -31,7 +34,6 @@
 #include <type_traits>
 #include <memory>
 #include <random>
-#include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 

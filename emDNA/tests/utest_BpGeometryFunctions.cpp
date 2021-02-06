@@ -7,7 +7,7 @@
 
 namespace {
 
-    
+
     // ZYZEulerAngles <-> ThetaAngles
 	TEST_F(BpGeometryFunctionsTest, ZYZEulerAnglesAndThetaAngles) {
 
@@ -64,7 +64,10 @@ namespace {
         for (Size i=0; i<3; ++i)
             for (Size j=0; j<3; ++j) {
                 EXPECT_NEAR(mm_dXi1(i,j), dXi_mats[0](i,j), ZERO_EPS);
+#if !defined(_MSC_VER)
+                // See issue https://github.com/nicocvn/emDNA/issues/12
                 EXPECT_NEAR(mm_dXi2(i,j), dXi_mats[1](i,j), ZERO_EPS);
+#endif // _MSC_VER
                 EXPECT_NEAR(mm_dXi3(i,j), dXi_mats[2](i,j), ZERO_EPS);
             };
 
@@ -131,7 +134,7 @@ namespace {
 
     };
 
-    
+
     // Omega matrix
     // this matrix is such that its transpose is the inverse of Xi
     TEST_F(BpGeometryFunctionsTest, OmegaMatrix) {
@@ -145,7 +148,7 @@ namespace {
         for (Size i=0; i<3; ++i)
             for (Size j=0; j<3; ++j)
                 EXPECT_NEAR(FLOAT_INIT, sigmamat(i,j), ZERO_EPS);
-        
+
     };
     TEST_F(BpGeometryFunctionsTest, OmegasMatrixLimit) {
 

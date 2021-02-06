@@ -35,7 +35,3 @@ endforeach()
 add_library(emDNA STATIC ${emDNA_SOURCES})
 target_link_libraries(emDNA PUBLIC DNASim alglib)
 target_include_directories(emDNA PUBLIC ${emDNA_HEADERS_DIRS})
-
-
-# --- Install directives ---
-
