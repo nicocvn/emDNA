@@ -12,8 +12,8 @@ The code base has virtually no system-dependent code so emDNA can most likely be
 - [Requirements](#requirements)
 - [Cloning the repository](#cloning-the-repository)
 - [Build instructions](#build-instructions)
-    * [macOS and Ubuntu (Linux)](#macos-and-ubuntu--linux-)
-    * [Windows installation](#windows-installation)
+    * [macOS and Ubuntu](#macos-and-ubuntu)
+    * [Windows](#windows)
 - [Running the tests](#running-the-tests)
 
 
@@ -23,9 +23,9 @@ The code base has virtually no system-dependent code so emDNA can most likely be
 
 Note that, emDNA has only been tested on the following platform/compiler setups:
 
-- Apple Clang on macOS
-- GCC on Ubuntu
-- MSVC (cl.exe) on Windows
+- Apple Clang on macOS (macOS 10.13 and later)
+- GCC 9.2.0 (and later) on Ubuntu
+- MSVC (cl.exe) on Windows (latest version is recommended)
 
 It is very likely that the project can be built on other setups (e.g. GCC+MinGW on Windows) but this has not been tested.
 
@@ -43,12 +43,12 @@ The following notes assume the emDNA repository was cloned in the directory `/so
 
 Note: because the project is based on CMake it is possible to pass additional compiler flags if desired but this is not covered in the instructions.
 
-### macOS and Ubuntu (Linux)
-1. Create a build and installation directory:
+### macOS and Ubuntu
+1. Create build and installation directories:
 
     ```
     $ cd /somewhere
-    $ mkdir emDNA-build emDNA-install.
+    $ mkdir emDNA-build emDNA-install
     ```
 
 2. Configure the CMake project:
@@ -78,7 +78,41 @@ Note: because the project is based on CMake it is possible to pass additional co
 5. Cleanup: the build directory can be removed once the install step was completed successfully.
 
 ### Windows
-Coming soon ...
+1. Start a developer command prompt: this should be available as *Developer PowerShell 2019* from the start menu (the year might be different depending on the installed Visual Studio version).
+
+1. Create build and installation directories:
+
+    ```
+    PS > cd C:\somewhere
+    PS > mkdir emDNA-build
+    PS > mkdir emDNA-install
+    ```
+
+2. Configure the CMake project:
+
+    ```
+    PS >  cmake -G"Visual Studio 16 2019" -A x64 -S .\emDNA.git\ -B .\emDNA-build\ -DCMAKE_BUILD_TYPE=Release
+    ```
+
+    The `"Visual Studio 16 2019"` value might need to be adapted depending on the CMake and Visual Studio versions available on the system. Executing the command `cmake -G` will list the available generators values.
+
+3. Build the project:
+
+    ```
+    PS > cmake --build .\emDNA-build\ --config Release --parallel 2
+    ```
+
+4. Install:
+
+    ```
+    PS > cmake --install .\emDNA-build\ --config Release --prefix .\emDNA-install\
+    ```
+
+    This will install the various emDNA command-line tools in `C:\somewhere\emDNA-install\bin\Release` (or whatever build type was selected during configuration). The tools can then be moved/copied elsewhere.
+
+5. Cleanup: the build directory can be removed once the install step was completed successfully.
+
+Note: the emDNA command line tools can be run from a regular command prompt after being installed; there is no need to start a developer command prompt to run them.
 
 
 ## Running the tests
