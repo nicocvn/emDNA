@@ -9,4 +9,4 @@
 	url = git@github.com:jlblancoc/nanoflann.git
 [submodule "deps/eigen"]
 	path = deps/eigen
-	url = git@github.com:eigenteam/eigen-git-mirror.git
+	url = https://gitlab.com/libeigen/eigen.git

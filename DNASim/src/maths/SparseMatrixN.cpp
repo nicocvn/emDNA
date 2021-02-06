@@ -149,13 +149,13 @@ namespace DNASim {
     MatrixN operator*(const SparseMatrixN& sm, const MatrixN& dm) {
         EigenMatrixX dmat(dm.block_matrix());
         MatrixN final_mat(sm.n_rows(), dm.n_cols());
-        final_mat.set_block(0, 0, sm.m_mat*dmat);
+        final_mat.set_block(0, 0, (dmat*sm.m_mat).array());
         return final_mat;
     };
     MatrixN operator*(const MatrixN& dm, const SparseMatrixN& sm) {
         EigenMatrixX dmat(dm.block_matrix());
         MatrixN final_mat(dm.n_rows(), sm.n_cols());
-        final_mat.set_block(0, 0, dmat*sm.m_mat);
+        final_mat.set_block(0, 0, (dmat*sm.m_mat).array());
         return final_mat;
     };
 
