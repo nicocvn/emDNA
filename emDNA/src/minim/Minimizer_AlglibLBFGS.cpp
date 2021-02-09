@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <Minimizer_AlglibLBFGS.h>
+#include "minim/Minimizer_AlglibLBFGS.h"
 
 
 // class default constructor

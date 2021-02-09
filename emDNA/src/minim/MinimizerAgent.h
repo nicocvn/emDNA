@@ -6,10 +6,10 @@
 #define emDNA_MinimizerAgent_h
 
 
-#include <emDNA_Includes.h>
-#include <BpCollection.h>
-#include <Minimizer_Alglib.h>
-#include <BpCollection_Interface.h>
+#include "emDNA_Includes.h"
+#include "DNA/BpCollection.h"
+#include "minim/Minimizer_Alglib.h"
+#include "DNA/BpCollection_Interface.h"
 
 
 // minimization results data structure

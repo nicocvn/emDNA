@@ -2,9 +2,9 @@
 // Nicolas Clauvelin
 
 
-#include <BpCollection.h>
-#include <BpCollection_x3DNA.h>
-#include <BpCollectionFactory.h>
+#include "DNA/BpCollection.h"
+#include "DNA/BpCollection_x3DNA.h"
+#include "DNA/BpCollectionFactory.h"
 
 
 // static factory method - base pairs file

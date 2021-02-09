@@ -9,13 +9,12 @@
 #define emDNA_emDNA_Serialization_h
 
 
-#include <emDNA_Includes.h>
+#include "emDNA_Includes.h"
 // --- serialization
-#include <Cereal_Includes.h>
-#include <DNASimSerialization.h>
+#include <DNASim.h>
 // --- data types
-#include <BpStepDofs.h>
-#include <BpStepParams.h>
+#include "DNA/BpStepDofs.h"
+#include "DNA/BpStepParams.h"
 
 
 // BpStepDofs

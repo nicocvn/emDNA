@@ -3,14 +3,14 @@
 
 
 // bp collection interfaces headers
-#include <FreeBpCollection.h>
-#include <AnchoredBpCollection.h>
-#include <ClampedBpCollection.h>
-#include <PullingBpCollection.h>
+#include "DNA/FreeBpCollection.h"
+#include "DNA/AnchoredBpCollection.h"
+#include "DNA/ClampedBpCollection.h"
+#include "DNA/PullingBpCollection.h"
 
 // minimization headers
-#include <AlglibBpCollectionMinimizer.h>
-#include <MinimizerAgent.h>
+#include "minim/AlglibBpCollectionMinimizer.h"
+#include "minim/MinimizerAgent.h"
 
 
 MinimizationResults MinimizerAgent::

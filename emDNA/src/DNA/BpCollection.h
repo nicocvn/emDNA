@@ -9,8 +9,8 @@
 #define emDNA_BpCollection_h
 
 
-#include <BpStepParams.h>
-#include <BpStepDofs.h>
+#include "DNA/BpStepParams.h"
+#include "DNA/BpStepDofs.h"
 
 
 class BpCollection {

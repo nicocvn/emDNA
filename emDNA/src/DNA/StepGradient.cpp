@@ -2,8 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <IndexManager.h>
-#include <StepGradient.h>
+#include "DNA/IndexManager.h"
+#include "DNA/StepGradient.h"
 
 
 // flattening function for StepGradientVec

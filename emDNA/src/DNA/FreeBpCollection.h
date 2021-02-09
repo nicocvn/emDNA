@@ -15,7 +15,7 @@
 #define emDNA_FreeBpCollection_h
 
 
-#include <BpCollection_Interface.h>
+#include "DNA/BpCollection_Interface.h"
 
 
 class FreeBpCollection final : public BpCollection_Interface {

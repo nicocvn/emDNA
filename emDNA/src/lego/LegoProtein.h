@@ -14,8 +14,8 @@
 #define emDNA_LegoProtein_h
 
 
-#include <emDNA_Includes.h>
-#include <BpCollection.h>
+#include "emDNA_Includes.h"
+#include "DNA/BpCollection.h"
 
 
 class LegoProtein {

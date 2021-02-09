@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <Minimizer_AlglibCG.h>
+#include "minim/Minimizer_AlglibCG.h"
 
 
 // class default constructor

@@ -23,6 +23,7 @@ namespace DNASim {
     #include "dna/StepParameters_AnisoDNA.h"
     #include "dna/StepParameters_AnisoDNA_304.h"
     #include "dna/StepParameters_Olson1998.h"
+    #include "dna/StepParameters_Olson1998Legacy.h"
 
     // list of sequence dependence model - force constants
     #include "dna/ForceConstants_IdealDNA.h"
@@ -82,6 +83,14 @@ namespace DNASim {
             SequenceDependenceModelData(StepParameters_Olson1998,
                                         ForceConstants_Olson1998,
                                         "force field from W. K. Olson 98 paper")
+        },
+
+        // Olson1998 legacy
+        { "Olson1998Legacy",
+            SequenceDependenceModelData(StepParameters_Olson1998Legacy,
+                                        ForceConstants_Olson1998,
+                                        "force field from W. K. Olson 98 "
+                                        "paper (legacy)")
         },
 
     };

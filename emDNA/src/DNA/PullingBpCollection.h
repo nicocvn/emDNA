@@ -11,7 +11,7 @@
 #define emDNA_PullingBpCollection_h
 
 
-#include <BpCollection_Interface.h>
+#include "DNA/BpCollection_Interface.h"
 
 
 class PullingBpCollection final : public BpCollection_Interface {

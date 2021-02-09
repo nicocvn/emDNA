@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <StepBlock.h>
+#include "DNA/StepBlock.h"
 
 
 // constructor with initialization from four 3x3 matrices

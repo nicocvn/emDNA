@@ -2,8 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <StepBlock.h>
-#include <BpCollectionGeometry.h>
+#include "DNA/StepBlock.h"
+#include "DNA/BpCollectionGeometry.h"
 
 
 namespace BpCollectionGeometry {

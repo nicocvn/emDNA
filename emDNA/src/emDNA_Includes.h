@@ -7,34 +7,7 @@
 
 
 // DNASim headers
-// -- maths
-#include <Vector3.h>
-#include <VectorN.h>
-#include <Matrix3.h>
-#include <MatrixN.h>
-#include <SparseMatrixEntries.h>
-#include <SparseMatrixN.h>
-#include <Triad.h>
-#include <AffineTransformation.h>
-#include <Segment.h>
-#include <CurveTopology.h>
-#include <DiscreteRibbon.h>
-#include <BpStepTwistDensity.h>
-#include <PointCloudKdTree.h>
-// --- DNA
-#include <StepParameters.h>
-#include <Sequence.h>
-#include <StepParametersDB.h>
-#include <ForceConstantsDB.h>
-// --- I/O
-#include <EnhancedString.h>
-#include <InputFileHandler.h>
-#include <OutputFileHandler.h>
-#include <DateParser.h>
-// --- utils
-#include <OptionsManager.h>
-#include <Parser_x3DNA.h>
-// --- namespace
+#include <DNASim.h>
 using namespace DNASim;
 
 

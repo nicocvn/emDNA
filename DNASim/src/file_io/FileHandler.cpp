@@ -49,17 +49,6 @@ namespace DNASim {
     FileHandler::~FileHandler() = default;
 
 
-	// return the current working directory
-	const std::string FileHandler::current_directory() const {
-#define BUFFER_SIZE 2048
-		char cwd[BUFFER_SIZE];
-		char* ret = getcwd(cwd, BUFFER_SIZE);
-        assert(ret != nullptr);
-#undef BUFFER_SIZE
-		return std::string(cwd);
-	};
-
-
 	// file path accessor
 	const std::string& FileHandler::file_path() const {
 		return m_file_path;

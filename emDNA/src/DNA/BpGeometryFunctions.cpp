@@ -2,9 +2,9 @@
 // Nicolas Clauvelin
 
 
-#include <BpStepDofs.h>
-#include <BpStepParams.h>
-#include <BpGeometryFunctions.h>
+#include "DNA/BpStepDofs.h"
+#include "DNA/BpStepParams.h"
+#include "DNA/BpGeometryFunctions.h"
 
 
 namespace BpGeometryFunctions {

@@ -9,10 +9,9 @@
 if(NOT TARGET gtest)
 
     # Add Googletest project.
-    set(BUILD_GMOCK OFF
-        CACHE STRING "" FORCE)
-    set(INSTALL_GTEST OFF
-        CACHE STRING "" FORCE)
+    set(BUILD_GMOCK OFF CACHE STRING "" FORCE)
+    set(INSTALL_GTEST OFF CACHE STRING "" FORCE)
+    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
     add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/googletest/)
 
     # Disable LTO (not supported due to old CMake).

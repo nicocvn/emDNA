@@ -2,11 +2,11 @@
 // Nicolas Clauvelin
 
 
-#include <IndexManager.h>
-#include <BpCollection.h>
-#include <BpCollectionGeometry.h>
-#include <BpCollectionGradient.h>
-#include <HessianFunctions.h>
+#include "DNA/IndexManager.h"
+#include "DNA/BpCollection.h"
+#include "DNA/BpCollectionGeometry.h"
+#include "DNA/BpCollectionGradient.h"
+#include "DNA/HessianFunctions.h"
 
 
 namespace HessianFunctions {

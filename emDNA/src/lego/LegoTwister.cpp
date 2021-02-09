@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <LegoTwister.h>
+#include "lego/LegoTwister.h"
 
 
 // class constructor with full initialization

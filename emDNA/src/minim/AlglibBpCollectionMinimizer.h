@@ -9,7 +9,7 @@
 #define emDNA_AlglibBpCollectionMinimizer_h
 
 
-#include <Minimizer_Alglib.h>
+#include "minim/Minimizer_Alglib.h"
 
 
 // minimization algorithm enum type

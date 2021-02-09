@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <IndexPair.h>
+#include "DNA/IndexPair.h"
 
 
 // class default constructor

@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <LegoTwistedBender.h>
+#include "lego/LegoTwistedBender.h"
 
 
 // class constructor with full initialization

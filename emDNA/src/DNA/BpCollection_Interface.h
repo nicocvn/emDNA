@@ -16,8 +16,8 @@
 #define emDNA_BpCollection_Interface_h
 
 
-#include <IndexManager.h>
-#include <BpCollection.h>
+#include "DNA/IndexManager.h"
+#include "DNA/BpCollection.h"
 
 
 class BpCollection_Interface {

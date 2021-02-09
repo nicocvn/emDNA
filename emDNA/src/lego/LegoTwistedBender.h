@@ -6,7 +6,7 @@
 #define emDNA_LegoTwistedBender_h
 
 
-#include <LegoProtein.h>
+#include "lego/LegoProtein.h"
 
 
 class LegoTwistedBender final : public LegoProtein {

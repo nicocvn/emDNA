@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <BpStepParams.h>
+#include "DNA/BpStepParams.h"
 
 
 // class constructor with initialization from two base pairs

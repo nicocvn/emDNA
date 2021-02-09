@@ -2,8 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <BpStepDofs.h>
-#include <BpGeometryFunctions.h>
+#include "DNA/BpStepDofs.h"
+#include "DNA/BpGeometryFunctions.h"
 
 
 // class default constructor

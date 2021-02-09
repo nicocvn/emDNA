@@ -19,7 +19,7 @@
 #define emDNA_BpCollectionGradient_h
 
 
-#include <StepGradient.h>
+#include "DNA/StepGradient.h"
 class BpStepParams;
 class BpCollection;
 class IndexManager;

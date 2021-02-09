@@ -2,12 +2,12 @@
 // Nicolas Clauvelin
 
 
-#include <DNAElectrostaticsParams.h>
-#include <IndexManager.h>
-#include <BpCollection.h>
-#include <BpGeometryFunctions.h>
-#include <BpCollectionGeometry.h>
-#include <BpCollectionGradient.h>
+#include "DNA/DNAElectrostaticsParams.h"
+#include "DNA/IndexManager.h"
+#include "DNA/BpCollection.h"
+#include "DNA/BpGeometryFunctions.h"
+#include "DNA/BpCollectionGeometry.h"
+#include "DNA/BpCollectionGradient.h"
 
 
 namespace BpCollectionGradient {

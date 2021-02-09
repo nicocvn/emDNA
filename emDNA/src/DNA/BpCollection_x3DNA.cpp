@@ -2,8 +2,8 @@
 // Nicolas Clauvelin
 
 
-#include <BpCollection.h>
-#include <BpCollection_x3DNA.h>
+#include "DNA/BpCollection.h"
+#include "DNA/BpCollection_x3DNA.h"
 
 
 // x3DNA reading method for step parameters file

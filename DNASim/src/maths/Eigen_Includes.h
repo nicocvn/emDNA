@@ -13,6 +13,7 @@
 
 
 // suppress warnings
+#if defined(__GNUC__) || defined(__clang__)
 #pragma clang diagnostic push
 #pragma GCC diagnostic push
 #pragma clang diagnostic ignored "-Wconversion"
@@ -26,6 +27,7 @@
 #pragma GCC diagnostic ignored "-Wshadow"
 #pragma GCC diagnostic ignored "-Wdeprecated"
 #pragma clang diagnostic ignored "-Wdeprecated"
+#endif  // __GNUC__ || __clang__
 
 
 // includes
@@ -36,8 +38,10 @@
 #include <Eigen/Eigenvalues>
 
 
+#if defined(__GNUC__) || defined(__clang__)
 #pragma clang diagnostic pop
 #pragma GCC diagnostic push
+#endif  // __GNUC__ || __clang__
 
 
 // directives

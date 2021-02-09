@@ -9,7 +9,7 @@
 #define emDNA_LegoBender_h
 
 
-#include <LegoProtein.h>
+#include "lego/LegoProtein.h"
 
 
 class LegoBender final : public LegoProtein {

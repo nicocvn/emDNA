@@ -2,7 +2,7 @@
 // Nicolas Clauvelin
 
 
-#include <IndexManager.h>
+#include "DNA/IndexManager.h"
 
 
 // class defautl constructor

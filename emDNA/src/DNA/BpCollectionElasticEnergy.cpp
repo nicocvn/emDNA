@@ -2,9 +2,9 @@
 // Nicolas Clauvelin
 
 
-#include <BpCollection.h>
-#include <IndexManager.h>
-#include <BpCollectionElasticEnergy.h>
+#include "DNA/BpCollection.h"
+#include "DNA/IndexManager.h"
+#include "DNA/BpCollectionElasticEnergy.h"
 
 
 // bp collection elastic energy function
