@@ -7,9 +7,9 @@ $ emDNA-tool --argument=value --flag --optional-parameter=some_value --optional-
 
 ## Data formats
 emDNA can read and write data base-pair collection data in three formats, each with their own benefits:
-- x3DNA base-pair step parameters format ([x3DNAparams]
-- x3DNA base-pair reference frames format ([x3DNAbp])
-- base pair list format ([bplist])
+- x3DNA base-pair step parameters format ([x3DNAparams](#x3DNAparams))
+- x3DNA base-pair reference frames format ([x3DNAbp](#x3DNAbp))
+- base pair list format ([bplist](#bplist))
 
 ### x3DNAparams
 The x3DNAparams format corresponds to a list of all the step parameters. The file usually contains a header indicating the type of the parameters. emDNA only uses the rigid-body base-pair parameters and hence the base parameters are not relevant; therefore, it is important that the value in the second line of the header is set to 0. Also, the header is not required for parsing.
@@ -103,23 +103,25 @@ To package the force field one has to use the emDNA_force_field. The tool requir
 
   
 A command line example:
-```$ emDNA-ff-packager --intrinsic-steps-input=steps.txt --force-constants-input=fmat.txt --model-name=my_force_field```
+```
+$ emDNA-ff-packager --intrinsic-steps-input=steps.txt --force-constants-input=fmat.txt --model-name=my_force_field
+```
 
 For additional assistance, use ```$ emDNA-ff-packager --help```
 
-## Command-line Check Collisions
+## Command-line Check Collisions: emDNA-check-collisions
 To be added
   
-## Command-line Force Probe
+## Command-line Force Probe: emDNA-force-probe
 To be added
   
-## Command-line Protein Binding
+## Command-line Protein Binding: emDNA-pro-bind
 To be added
   
 ## Command-line Optimizations: emDNA-cli
 
 The emDNA-cli tool is what conducts the optimization calculation. This tool requires:
-- An input file (either in the x3DNApar, x3DNAbp, or bp-list format)
+- An input file (either in the x3DNAparams, x3DNAbp, or bp-list format)
 - A forcefield (either pre-loaded or an external forcefield)
 - Specific end conditions to be applied to the initial base pair collection
 
@@ -129,39 +131,39 @@ emDNA-cli creates two output files. The first is a logfile (described below). Th
 ### Input files
 An input file containing the initial base-pair collection has to be provided using one of the three following arguments depending on the file format:
 
-```--x3DNA-bp-input=<filename>```: for input file with x3DNAbp format,
-```--x3DNA-bp-step-params-input=<filename>```: for input file with x3DNAparams format,
-```--bp-list-input=<filename>```: for input file with bplist format.
+* ```--x3DNA-bp-input=<filename>```: for input file with x3DNAbp format,
+* ```--x3DNA-bp-step-params-input=<filename>```: for input file with x3DNAparams format,
+* ```--bp-list-input=<filename>```: for input file with bplist format.
 
 ### Forcefields ("sequence-dependent models")
 The sequence-dependence model for the minimization has to be indicated by either referring to an implemented model or by providing an external force field.
 
-```--DNA-seqdep-model=<string>```: string should be one of the implemented force fields (see list of force fields),
-```--DNA-external-model=<filename (binary)>```: specifies a file containing a packaged force field (see external force field).
+* ```--DNA-seqdep-model=<string>```: string should be one of the implemented force fields (see list of force fields),
+* ```--DNA-external-model=<filename (binary)>```: specifies a file containing a packaged force field (see external force field).
 
 The list of --DNA-seqdep-models currently set within emDNA include:
-- IdealDNA: Not sequence-dependent, this force field corresponds to a straight B-DNA-like rest state with an helical repeat of 10.5 pb. The force constants are isotropic and quasi-inextensible (persistence lengths for bending is 47.7 nm and 66.6 nm for twisting).
-- IdealDNA_304: Not sequence-dependent, same as IdealDNA but with an intrinsic twist of 34.3 degrees (the helical repeat is still close to 10.5 bp).
-- AnisoDNA: Not sequence-dependent, this force field corresponds to a straight B-DNA-like rest state with an helical repeat of 10.5 pb. The force constants are anisotropic and quasi-inextensible. The persistence lengths are the same as for IdealDNA.
-- AnisoDNA_304: Not sequence-dependent, same as AnisoDNA but with an intrinsic twist of 34.3 degrees (the helical repeat is still close to 10.5 bp).
-- Olson1998: Fully sequence-dependent force field from values based on Olson, et al, PNAS 1998, vol 95, number 19, 11163-11168.
+- **IdealDNA**: Not sequence-dependent, this force field corresponds to a straight B-DNA-like rest state with an helical repeat of 10.5 pb. The force constants are isotropic and quasi-inextensible (persistence lengths for bending is 47.7 nm and 66.6 nm for twisting).
+- **IdealDNA_304**: Not sequence-dependent, same as IdealDNA but with an intrinsic twist of 34.3 degrees (the helical repeat is still close to 10.5 bp).
+- **AnisoDNA**: Not sequence-dependent, this force field corresponds to a straight B-DNA-like rest state with an helical repeat of 10.5 pb. The force constants are anisotropic and quasi-inextensible. The persistence lengths are the same as for IdealDNA.
+- **AnisoDNA_304**: Not sequence-dependent, same as AnisoDNA but with an intrinsic twist of 34.3 degrees (the helical repeat is still close to 10.5 bp).
+- **Olson1998**: Fully sequence-dependent force field from values based on Olson, et al, PNAS 1998, vol 95, number 19, 11163-11168.
   
 ### End conditions
 The end conditions applied to the base-pair collection has to be indicated by using one of the following flags:
 
-```--free-collection```: the collection is free of any imposed constraint (used for debug purposes mainly),
-```--hold-last-origin```: the origin of the last base pair is imposed and cannot change through the minimization process (imposed end-to-end vector),
-```--hold-last-bp```: the origin and orientation of the last base pair is imposed and cannot change through the minimization process (imposed end-to-end vector and end-to-end rotation).
+* ```--free-collection```: the collection is free of any imposed constraint (used for debug purposes mainly),
+* ```--hold-last-origin```: the origin of the last base pair is imposed and cannot change through the minimization process (imposed end-to-end vector),
+* ```--hold-last-bp```: the origin and orientation of the last base pair is imposed and cannot change through the minimization process (imposed end-to-end vector and end-to-end rotation).
 
 ### Options
 Below is the list of all options that can be used to customize the optimization:
 
-```--output-progress=<integer>```: frequency for writing the current configuration (during the minimization) to tmp_confs.txt (default=0, which disables output)
-```--energy-progress```: displays the current energy during the minimization
-```--quiet```: suppresses console output (useful when using emDNA in scripts)
-```--minim-settings=<{vector}>```: changes the minimization settings; the vector should be of the form {max-iterations,dx,f,g,max-step-size}
-```--frozen-steps=<{list}>```: specify the ranges of base-pair steps to be considered as frozen. The list should be of the form: step_i:step_j,step_k:step_l, which specifies the ranges [i,j] and [k,l]. The numbering of steps does not start at 0 and the range of steps is an inclusive list
-```--output-name=<string>```: prefix name for output files (default="emDNA_minim")
+* ```--output-progress=<integer>```: frequency for writing the current configuration (during the minimization) to tmp_confs.txt (default=0, which disables output)
+* ```--energy-progress```: displays the current energy during the minimization
+* ```--quiet```: suppresses console output (useful when using emDNA in scripts)
+* ```--minim-settings=<{vector}>```: changes the minimization settings; the vector should be of the form {max-iterations,dx,f,g,max-step-size}
+* ```--frozen-steps=<{list}>```: specify the ranges of base-pair steps to be considered as frozen. The list should be of the form: step_i:step_j,step_k:step_l, which specifies the ranges [i,j] and [k,l]. The numbering of steps does not start at 0 and the range of steps is an inclusive list
+* ```--output-name=<string>```: prefix name for output files (default="emDNA_minim")
 
 
 A command line example:
@@ -175,8 +177,8 @@ For additional assistance, use ```$ emDNA-cli --help```
 ## Command-line Topology Data
 A useful tool for both initial and optimized structures, higher-order information can be collected regarding the base pair collection's Linking Number, Twist, and Writhe. The only requirement is some input file.
 Additional options include:
-```--twist-density```: outputs the twist density along the collection of base pairs
-```--virtual-last-bp```: a useful tool for optimizing circular structures, this assumes the last base pair is virtual
+* ```--twist-density```: outputs the twist density along the collection of base pairs
+* ```--virtual-last-bp```: a useful tool for optimizing circular structures, this assumes the last base pair is virtual
 In addition, to specify an output name, use of '>' must follow the input file
 
 A command-line example:
@@ -238,17 +240,20 @@ return code: EPSG
 ```
 
 The various sections correspond to:
-```timestamp```: indicates the date at which the minimization was launch
-```command line input```: list all command-line options with their parsed values (useful to diagnose an option problem)
-```initial bp collection```: contains information about the input and lists the initial bair pair step parameters in the x3DNAbp format
-```minimization results```: contains the results of the minimization (description, initial and final energies, gradient norms, ...)
-```energy contributions for step parameter pairs```: gives the contributions to the energy of the different modes of deformation
-The return code provided in the minimization results has the following meaning:
-- ```EPSG```: the minimization successfully reduced the gradient norm below the threshold
-- ```EPSX```: the minimization stopped because the optimal point was not changing more than the threshold
-- ```EPSF```: the minimization stopped because the objective function (energy) was not decreasing more than the threshold
-- ```MAXIT```: the minimization reached the maximum number of iterations (can be relaunched with the output as new input)
-- ```BADCONDS```: the conditions are not sufficient to minimize the energy (this should not happen)
-- ```BADGRAD```: an error occurred in the computation of the gradient (this should not happen)
-- ```UNKNOWN```: an error occurred and most likely there is a bug in the software or a bad input
+- ```timestamp```: indicates the date at which the minimization was launch
+- ```command line input```: list all command-line options with their parsed values (useful to diagnose an option problem)
+- ```initial bp collection```: contains information about the input and lists the initial bair pair step parameters in the x3DNAbp format
+- ```minimization results```: contains the results of the minimization (description, initial and final energies, gradient norms, ...)
+- ```return code```:
+    - ```EPSG```: the minimization successfully reduced the gradient norm below the threshold
+    - ```EPSX```: the minimization stopped because the optimal point was not changing more than the threshold
+    - ```EPSF```: the minimization stopped because the objective function (energy) was not decreasing more than the threshold
+    - ```MAXIT```: the minimization reached the maximum number of iterations (can be relaunched with the output as new input)
+    - ```BADCONDS```: the conditions are not sufficient to minimize the energy (this should not happen)
+    - ```BADGRAD```: an error occurred in the computation of the gradient (this should not happen)
+    - ```UNKNOWN```: an error occurred and most likely there is a bug in the software or a bad input
 In case the return code is ```EPSX``` or ```EPSF```, a new minimization can be performed using the output as new input and changing the minimization settings (see ```--minim-settings```).
+
+- ```energy contributions for step parameter pairs```: This 6x6 matrix gives the contributions to the energy of the different modes of deformation; column and row order is similiar: ```{'tilt','roll','twist','shift','slide','rise'}```
+
+
