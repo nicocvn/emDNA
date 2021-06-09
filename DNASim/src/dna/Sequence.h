@@ -17,7 +17,7 @@ namespace DNASim {
 
     // nucleotide type enum
     enum class BaseSymbol : Size {
-        A = 0, C = 1, G = 2, T = 3, X = 4
+        A = 0, C = 1, G = 2, T = 3, X = 4 // "X" added by Zoe
     };
 
 

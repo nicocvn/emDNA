@@ -42,9 +42,11 @@ namespace DNASim {
         };
 
         // initialization
-        for (Size i=0; i<SEQ_DIM; ++i)
+        for (Size i=0; i<(SEQ_DIM+1); ++i)
             for (Size j=0; j<SEQ_DIM; ++j)
-                m_step_parameters[i][j] = db_data[i][j];
+                for (Size k=0; k<SEQ_DIM; ++k) //Added by Zoe
+                    for (Size l=0; l<(SEQ_DIM+1); ++l) //Added by Zoe
+                        m_step_parameters[i][j][k][l] = db_data[j][k];
 
     };
 
@@ -72,7 +74,19 @@ namespace DNASim {
     const {
         const Size i = static_cast<Size>(step_seq.first_base());
         const Size j = static_cast<Size>(step_seq.last_base());
-        return m_step_parameters[i][j];
+        return m_step_parameters[0][i][j][0]; //Changed by Zoe
+    };
+
+    // Added by Zoe
+    // tetramer dependent step parameters
+    const StepParameters&
+    StepParametersDB::intrinsic_bp_step_params(const TetramerSequence& tetra_seq)
+    const {
+        const Size i = static_cast<Size>(tetra_seq.first_base());
+        const Size j = static_cast<Size>(tetra_seq.second_base());
+        const Size k = static_cast<Size>(tetra_seq.third_base());
+        const Size l = static_cast<Size>(tetra_seq.fourth_base());
+        return m_step_parameters[i][j][k][l];
     };
 
 
@@ -112,8 +126,50 @@ namespace DNASim {
             // set up
             const Size idx1 = static_cast<Size>(step_seq.first_base());
             const Size idx2 = static_cast<Size>(step_seq.last_base());
-            m_step_parameters[idx1][idx2] = p;
+            
+            for(Size j=0; j<(SEQ_DIM+1); ++j){ //Added by Zoe
+                for(Size k=0; k<(SEQ_DIM+1); ++k){ //Added by Zoe
+                    m_step_parameters[j][idx1][idx2][k] = p; //Changed by Zoe
+                }
+            };
 
+        };
+
+    };
+
+    // Added by Zoe
+    void StepParametersDB::
+    init_tetrameric_data_from_list_of_string(const std::string data[(SEQ_DIM+1)*SEQ_DIM*SEQ_DIM*(SEQ_DIM+1)]) {
+
+        // filling two dimensional array
+        for (Size i=0; i<(SEQ_DIM+1)*SEQ_DIM*SEQ_DIM*(SEQ_DIM+1); ++i) {
+
+            // string splitting
+            std::vector<std::string> tokens;
+            bool chk = EnhancedString::tokenize_string(data[i], tokens, '=');
+
+            // checking
+            DS_ASSERT(chk && tokens[0].size()==4,
+                      "wrong format in intrinsic step parameters data\n"
+                      "string = " + data[i]);
+
+            // step sequence
+            const char *seq = tokens[0].c_str();
+            TetramerSequence tetra_seq(Base::base_symbol_from_char(seq[0]),
+                                  Base::base_symbol_from_char(seq[1]),
+                                  Base::base_symbol_from_char(seq[2]),
+                                  Base::base_symbol_from_char(seq[3]));
+
+            // data
+            StepParameters p(tokens[1]);
+
+            // set up
+            const Size idx1 = static_cast<Size>(tetra_seq.first_base());
+            const Size idx2 = static_cast<Size>(tetra_seq.second_base());
+            const Size idx3 = static_cast<Size>(tetra_seq.third_base());
+            const Size idx4 = static_cast<Size>(tetra_seq.fourth_base());
+
+            m_step_parameters[idx1][idx2][idx3][idx4] = p;
         };
 
     };

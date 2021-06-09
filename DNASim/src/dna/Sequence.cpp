@@ -25,7 +25,7 @@ namespace DNASim {
             return BaseSymbol::G;
         else if (s == 'T')
             return BaseSymbol::T;
-        else if (s == 'X')
+        else if (s == 'X')  // Added by Zoe
             return BaseSymbol::X;
         else
             DS_ASSERT(false, "wrong base symbol:\n"+std::string(&s));
@@ -39,7 +39,7 @@ namespace DNASim {
             return BaseSymbol::G;
         else if (base == BaseSymbol::G)
             return BaseSymbol::C;
-        else if (base == BaseSymbol::X)
+        else if (base == BaseSymbol::X) //Added by Zoe
             return BaseSymbol::X;
         else
             DS_ASSERT(false, "wrong base symbol:\n"+str(base));
