@@ -63,6 +63,29 @@ namespace DNASim {
     };
 
 
+
+    // Added by Zoe
+    /*** TetramerSequence class ***/
+    TetramerSequence::TetramerSequence(const BaseSymbol& base_1, 
+                                        const BaseSymbol& base_2,
+                                        const BaseSymbol& base_3, 
+                                        const BaseSymbol& base_4) :
+    m_bases(base_1, base_2, base_3, base_4) {};
+
+    //base acessors
+    const BaseSymbol& TetramerSequence::first_base() const {
+        return std::get<0>(m_bases);
+    };
+    const BaseSymbol& TetramerSequence::second_base() const {
+        return std::get<1>(m_bases);
+    };
+    const BaseSymbol& TetramerSequence::third_base() const {
+        return std::get<2>(m_bases);
+    };
+    const BaseSymbol& TetramerSequence::fourth_base() const {
+        return std::get<3>(m_bases);
+    };
+
     /*** Sequence class ***/
 
     // constructor with initialization
