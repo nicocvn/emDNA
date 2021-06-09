@@ -13,7 +13,7 @@ namespace DNASim {
     // static methods
     std::string Base::str(const BaseSymbol& base) {
         // the following array has to be ordered as the BaseSymbol enum
-        const std::string str[4] = {"A", "C", "G", "T"};
+        const std::string str[5] = {"A", "C", "G", "T", "X"};
         return str[static_cast<Size>(base)];
     };
     BaseSymbol Base::base_symbol_from_char(const char s) {
@@ -25,6 +25,8 @@ namespace DNASim {
             return BaseSymbol::G;
         else if (s == 'T')
             return BaseSymbol::T;
+        else if (s == 'X')
+            return BaseSymbol::X;
         else
             DS_ASSERT(false, "wrong base symbol:\n"+std::string(&s));
     };
@@ -37,6 +39,8 @@ namespace DNASim {
             return BaseSymbol::G;
         else if (base == BaseSymbol::G)
             return BaseSymbol::C;
+        else if (base == BaseSymbol::X)
+            return BaseSymbol::X;
         else
             DS_ASSERT(false, "wrong base symbol:\n"+str(base));
     };
