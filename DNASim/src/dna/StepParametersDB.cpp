@@ -59,6 +59,10 @@ namespace DNASim {
         DS_ASSERT(it != SequenceDependenceModelList.end(),
                   "non-existing sequence-dependence model name: " + model_name);
 
+        //Here need to check if model is dimeric or tetrameric
+        //if dimer then init_data_from_list_of_string
+        //else if tetramer then init_tetrameric_data_from_list_of_string
+
         // initialization
         init_data_from_list_of_string(it->second._step_parameters_data);
 
