@@ -15,9 +15,11 @@
 #include "dna/ForceConstants_AnisoDNA.h"
 #include "dna/ForceConstants_IdealDNA.h"
 #include "dna/ForceConstants_Olson1998.h"
+#include "dna/ForceConstants_TetramericModel.h"
 #include "dna/Parser_x3DNA.h"
 #include "dna/Sequence.h"
 #include "dna/SequenceDepenceModels.h"
+#include "dna/TetramerDepenceModels.h"
 #include "dna/StepArray.h"
 #include "dna/StepParameters.h"
 #include "dna/StepParametersDB.h"
@@ -26,6 +28,7 @@
 #include "dna/StepParameters_IdealDNA.h"
 #include "dna/StepParameters_IdealDNA_304.h"
 #include "dna/StepParameters_Olson1998.h"
+#include "dna/StepParameters_TetramericModel.h"
 
 // file_io
 #include "file_io/EnhancedString.h"

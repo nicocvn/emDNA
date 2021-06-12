@@ -9,6 +9,8 @@
 // sequence dependence models
 #include "dna/SequenceDepenceModels.h"
 
+// tetramer dependence models
+#include "dna/TetramerDepenceModels.h"
 
 namespace DNASim {
 
@@ -55,17 +57,31 @@ namespace DNASim {
     void StepParametersDB::init_with_model(const std::string& model_name) {
 
         // look for model name
+        /*
         auto it = SequenceDependenceModelList.find(model_name);
         DS_ASSERT(it != SequenceDependenceModelList.end(),
                   "non-existing sequence-dependence model name: " + model_name);
 
-        //Here need to check if model is dimeric or tetrameric
-        //if dimer then init_data_from_list_of_string
-        //else if tetramer then init_tetrameric_data_from_list_of_string
-
         // initialization
         init_data_from_list_of_string(it->second._step_parameters_data);
+        */
+        
+        // Added by Zoe
+        auto it1 = SequenceDependenceModelList.find(model_name);
+        auto it2 = TetramerDependenceModelList.find(model_name);
 
+        if (it1 != SequenceDependenceModelList.end()){
+            init_data_from_list_of_string(it1->second._step_parameters_data);
+        }
+        else if (it2 != TetramerDependenceModelList.end()) {
+            init_tetrameric_data_from_list_of_string(it2->second._step_parameters_data);
+        }
+        else {
+            DS_ASSERT(false,
+            "non-existing sequence-dependence model name: " + model_name);
+        }
+        
+        
         // model name
         m_model_name = model_name;
 
