@@ -30,7 +30,7 @@ struct CLData {
 
 // types renaming
 template <class T>
-using TupleT = std::tuple<BaseSymbol, BaseSymbol, T>;
+using TupleT = std::tuple<BaseSymbol, BaseSymbol, BaseSymbol, BaseSymbol, T>; //Changed by Zoe
 template <class T>
 using TupleTVector = std::vector<TupleT<T>>;
 

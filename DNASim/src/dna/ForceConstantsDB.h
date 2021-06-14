@@ -35,6 +35,8 @@ namespace DNASim {
         ForceConstantsDB(const std::string& model_name);
         ForceConstantsDB(const std::string& model_name,
                          const MatrixN (*db_data)[SEQ_DIM]);
+        ForceConstantsDB(const std::string& model_name,
+                         const MatrixN (db_data)[SEQ_DIM+1][SEQ_DIM][SEQ_DIM][SEQ_DIM+1]);
         ~ForceConstantsDB()  = default;
 
         // copy and move operators

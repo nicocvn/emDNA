@@ -37,6 +37,8 @@ namespace DNASim {
         StepParametersDB(const std::string& model_name);
         StepParametersDB(const std::string& model_name,
                          const StepParameters (*db_data)[SEQ_DIM]);
+        StepParametersDB(const std::string& model_name,
+                         const StepParameters (db_data)[SEQ_DIM+1][SEQ_DIM][SEQ_DIM][SEQ_DIM+1]);
         ~StepParametersDB() = default;
 
         // copy and move operators

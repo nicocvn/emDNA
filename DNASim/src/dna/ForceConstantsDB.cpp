@@ -52,6 +52,28 @@ namespace DNASim {
     };
 
 
+    // class constructor with full initialization (model name + db data)
+    ForceConstantsDB::ForceConstantsDB(const std::string& model_name,
+                                       const MatrixN (db_data)[SEQ_DIM+1][SEQ_DIM][SEQ_DIM][SEQ_DIM+1]) :
+    m_force_constants(),
+    m_model_name(model_name) {
+
+        // size checking
+        for (Size i=0; i<SEQ_DIM+1; ++i) {
+            const Size sz_chk = (Size)(sizeof(db_data[i])/sizeof(MatrixN));
+            DS_ASSERT(sz_chk==SEQ_DIM*SEQ_DIM*(SEQ_DIM+1),
+                      "wrong size for db_data");
+        };
+
+        // initialization
+        for (Size i=0; i<(SEQ_DIM+1); ++i)
+            for (Size j=0; j<SEQ_DIM; ++j)
+                for (Size k=0; k<SEQ_DIM; ++k) //Added by Zoe 
+                    for (Size l=0; l<(SEQ_DIM+1); ++l) //Added by Zoe 
+                        m_force_constants[i][j][k][l] = db_data[i][j][k][l]; //Changed by Zoe 
+
+    };
+
     // DB init methods
     void ForceConstantsDB::init_with_model(const std::string& model_name) {
 
