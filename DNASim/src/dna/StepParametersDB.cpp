@@ -52,6 +52,7 @@ namespace DNASim {
 
     };
 
+    //Added by Zoe: new constructor for serialization
     StepParametersDB::StepParametersDB(const std::string& model_name,
                                        const StepParameters
                                        (db_data)[SEQ_DIM+1][SEQ_DIM][SEQ_DIM][SEQ_DIM+1]) :
@@ -117,7 +118,7 @@ namespace DNASim {
     const {
         const Size i = static_cast<Size>(step_seq.first_base());
         const Size j = static_cast<Size>(step_seq.last_base());
-        return m_step_parameters[0][i][j][0]; //Changed by Zoe
+        return m_step_parameters[4][i][j][4]; //Changed by Zoe
     };
 
     // Added by Zoe

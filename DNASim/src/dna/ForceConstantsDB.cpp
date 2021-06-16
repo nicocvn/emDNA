@@ -52,7 +52,7 @@ namespace DNASim {
     };
 
 
-    // class constructor with full initialization (model name + db data)
+    // Added by Zoe: class constructor with full initialization (model name + db data)
     ForceConstantsDB::ForceConstantsDB(const std::string& model_name,
                                        const MatrixN (db_data)[SEQ_DIM+1][SEQ_DIM][SEQ_DIM][SEQ_DIM+1]) :
     m_force_constants(),
@@ -115,7 +115,7 @@ namespace DNASim {
     ForceConstantsDB::force_constants(const StepSequence& step_seq) const {
         const Size i = static_cast<Size>(step_seq.first_base());
         const Size j = static_cast<Size>(step_seq.last_base());
-        return m_force_constants[0][i][j][0];
+        return m_force_constants[4][i][j][4];
     };
 
     // Added by Zoe

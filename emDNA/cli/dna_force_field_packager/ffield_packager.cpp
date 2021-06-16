@@ -175,7 +175,7 @@ TupleTVector<VectorN> parse_text_file(const std::string& filename) {
     else {
         DS_ASSERT(false,
               "the input file " + filename + " is missing data; "
-              "the file has to contain the 16 sequence combinations");
+              "the file has to contain the 16 (or 400) sequence combinations");
     }
 
     return data;
