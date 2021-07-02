@@ -100,7 +100,7 @@ CLData parse_command_line(int argc, char* argv[]) {
 };
 
 
-//Changed by Zoe
+//Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
 // text file parsing function for data
 TupleTVector<VectorN> parse_text_file(const std::string& filename) {
 
@@ -112,6 +112,9 @@ TupleTVector<VectorN> parse_text_file(const std::string& filename) {
     TupleTVector<VectorN> data;
 
     data.reserve((SEQ_DIM+1)*SEQ_DIM*SEQ_DIM*(SEQ_DIM+1));
+
+    std::set<std::string> tetramers;//Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+
 
     if(file_lines.size()==16){
         for (Size i=0; i<file_lines.size(); ++i) {
@@ -134,7 +137,7 @@ TupleTVector<VectorN> parse_text_file(const std::string& filename) {
             const BaseSymbol n1 = step_seq.first_base();
             const BaseSymbol n2 = step_seq.last_base();
 
-            char bases[SEQ_DIM+1] = {'A', 'C', 'T', 'G', 'X'};
+            char bases[SEQ_DIM+1] = {'A', 'C', 'T', 'G', 'x'};
             for(Size i=0; i<SEQ_DIM+1; ++i){
                 for(Size j=0; j<SEQ_DIM+1; ++j){
                     data.push_back(TupleT<VectorN>(Base::base_symbol_from_char(bases[i]), n1, n2,
@@ -144,6 +147,7 @@ TupleTVector<VectorN> parse_text_file(const std::string& filename) {
         };
 
     }
+    //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     else if (file_lines.size()==400){
          for (Size i=0; i<file_lines.size(); ++i) {
 
@@ -157,6 +161,7 @@ TupleTVector<VectorN> parse_text_file(const std::string& filename) {
 
             // data
             const char *seq = tokens[0].c_str();
+            tetramers.insert(seq);//Added by Zoe Wefers (McGill University, July 2021, DIMACS REU)
             TetramerSequence tetra_seq(Base::base_symbol_from_char(seq[0]),
                                 Base::base_symbol_from_char(seq[1]),
                                 Base::base_symbol_from_char(seq[2]),
@@ -171,7 +176,13 @@ TupleTVector<VectorN> parse_text_file(const std::string& filename) {
             data.push_back(TupleT<VectorN>(n1, n2, n3, n4, flatten_vals));
         };
 
+        //Added by Zoe Wefers (McGill University, July 2021, DIMACS REU)
+        //If set less than 400, then some tetramer was added more than once
+        DS_ASSERT(tetramers.size() == 400,
+                "The input file " + filename + " contains duplicate tetramers");
+
     }
+    //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     else {
         DS_ASSERT(false,
               "the input file " + filename + " is missing data; "
@@ -183,7 +194,7 @@ TupleTVector<VectorN> parse_text_file(const std::string& filename) {
 };
 
 // step parameters db building function
-//Changed by Zoe
+//Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
 StepParametersDB build_steps_db(const std::string& model_name,
                                 const TupleTVector<VectorN>& data) {
 
@@ -209,7 +220,7 @@ StepParametersDB build_steps_db(const std::string& model_name,
 };
 
 // force constants db building function
-//Changed by Zoe
+//Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
 ForceConstantsDB build_fmat_db(const std::string& model_name,
                                const TupleTVector<VectorN>& data) {
 

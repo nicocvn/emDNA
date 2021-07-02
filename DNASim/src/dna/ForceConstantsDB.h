@@ -16,7 +16,7 @@ namespace DNASim {
 
 
     class StepSequence;
-    class TetramerSequence; // Added by Zoe
+    class TetramerSequence; // Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
 
 
     // macro for sequence dimension
@@ -51,7 +51,7 @@ namespace DNASim {
         // sequence dependent step parameters
         const MatrixN& force_constants(const StepSequence& step_seq) const;
         
-        //Added by Zoe
+        //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
         // tetramer dependent force constants
         const MatrixN& force_constants(const TetramerSequence& tetra_seq) const;
 
@@ -65,13 +65,13 @@ namespace DNASim {
         void init_data_from_list_of_string(const std::string
                                            data[SEQ_DIM*SEQ_DIM]);
 
-        //Added by Zoe
+        //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
         // model init methods
         void init_tetrameric_data_from_list_of_string(const std::string
                                            data[(SEQ_DIM+1)*SEQ_DIM*SEQ_DIM*(SEQ_DIM+1)]);
 
         // sequence-dependent data
-        MatrixN m_force_constants[SEQ_DIM+1][SEQ_DIM][SEQ_DIM][SEQ_DIM+1]; //Changed by Zoe
+        MatrixN m_force_constants[SEQ_DIM+1][SEQ_DIM][SEQ_DIM][SEQ_DIM+1]; //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
 
         // model name
         std::string m_model_name;

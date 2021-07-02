@@ -46,13 +46,14 @@ namespace DNASim {
         // initialization
         for (Size i=0; i<(SEQ_DIM+1); ++i)
             for (Size j=0; j<SEQ_DIM; ++j)
-                for (Size k=0; k<SEQ_DIM; ++k) //Added by Zoe
-                    for (Size l=0; l<(SEQ_DIM+1); ++l) //Added by Zoe
+                for (Size k=0; k<SEQ_DIM; ++k) //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+                    for (Size l=0; l<(SEQ_DIM+1); ++l) //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
                         m_step_parameters[i][j][k][l] = db_data[j][k];
 
     };
-
-    //Added by Zoe: new constructor for serialization
+    
+    //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+    //new constructor for serialization
     StepParametersDB::StepParametersDB(const std::string& model_name,
                                        const StepParameters
                                        (db_data)[SEQ_DIM+1][SEQ_DIM][SEQ_DIM][SEQ_DIM+1]) :
@@ -80,17 +81,8 @@ namespace DNASim {
     // DB init methods
     void StepParametersDB::init_with_model(const std::string& model_name) {
 
-        // look for model name
-        /*
-        auto it = SequenceDependenceModelList.find(model_name);
-        DS_ASSERT(it != SequenceDependenceModelList.end(),
-                  "non-existing sequence-dependence model name: " + model_name);
-
-        // initialization
-        init_data_from_list_of_string(it->second._step_parameters_data);
-        */
         
-        // Added by Zoe
+        // Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
         auto it1 = SequenceDependenceModelList.find(model_name);
         auto it2 = TetramerDependenceModelList.find(model_name);
 
@@ -118,10 +110,10 @@ namespace DNASim {
     const {
         const Size i = static_cast<Size>(step_seq.first_base());
         const Size j = static_cast<Size>(step_seq.last_base());
-        return m_step_parameters[4][i][j][4]; //Changed by Zoe
+        return m_step_parameters[4][i][j][4]; //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     };
 
-    // Added by Zoe
+    // Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     // tetramer dependent step parameters
     const StepParameters&
     StepParametersDB::intrinsic_bp_step_params(const TetramerSequence& tetra_seq)
@@ -171,9 +163,9 @@ namespace DNASim {
             const Size idx1 = static_cast<Size>(step_seq.first_base());
             const Size idx2 = static_cast<Size>(step_seq.last_base());
             
-            for(Size j=0; j<(SEQ_DIM+1); ++j){ //Added by Zoe
-                for(Size k=0; k<(SEQ_DIM+1); ++k){ //Added by Zoe
-                    m_step_parameters[j][idx1][idx2][k] = p; //Changed by Zoe
+            for(Size j=0; j<(SEQ_DIM+1); ++j){ //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+                for(Size k=0; k<(SEQ_DIM+1); ++k){ //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+                    m_step_parameters[j][idx1][idx2][k] = p; //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
                 }
             };
 
@@ -181,7 +173,7 @@ namespace DNASim {
 
     };
 
-    // Added by Zoe
+    // Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     void StepParametersDB::
     init_tetrameric_data_from_list_of_string(const std::string data[(SEQ_DIM+1)*SEQ_DIM*SEQ_DIM*(SEQ_DIM+1)]) {
 

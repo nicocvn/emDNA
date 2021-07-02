@@ -16,7 +16,7 @@ namespace DNASim {
 
 
     class StepSequence;
-    class TetramerSequence; //Added by Zoe
+    class TetramerSequence; //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
 
 
     // macro for sequence dimension
@@ -54,7 +54,7 @@ namespace DNASim {
         const StepParameters&
         intrinsic_bp_step_params(const StepSequence& step_seq) const;
 
-        // Added by Zoe
+        // Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
         const StepParameters&
         intrinsic_bp_step_params(const TetramerSequence& step_seq) const;
 
@@ -71,10 +71,10 @@ namespace DNASim {
 
         // model init methods
         void init_tetrameric_data_from_list_of_string(const std::string
-                                           data[(SEQ_DIM+1)*SEQ_DIM*SEQ_DIM*(SEQ_DIM+1)]); //Added by Zoe
+                                           data[(SEQ_DIM+1)*SEQ_DIM*SEQ_DIM*(SEQ_DIM+1)]); //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
 
         // sequence-dependent data
-        StepParameters m_step_parameters[SEQ_DIM+1][SEQ_DIM][SEQ_DIM][SEQ_DIM+1]; //Changed by Zoe
+        StepParameters m_step_parameters[SEQ_DIM+1][SEQ_DIM][SEQ_DIM][SEQ_DIM+1]; //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
 
         // model name
         std::string m_model_name;

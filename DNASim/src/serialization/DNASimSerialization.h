@@ -335,7 +335,7 @@ namespace DNASim {
     // StepParametersDB
 #define SEQ_DIM 4
 
-    //Changed by Zoe
+    //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     template <class ArchiveType>
     void save(ArchiveType& archive, const StepParametersDB& steps_db) {
 
@@ -371,7 +371,7 @@ namespace DNASim {
 
     };
 
-    //Changed by Zoe
+    //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     template <class ArchiveType>
     void load(ArchiveType& archive, StepParametersDB& steps_db) {
 
@@ -414,7 +414,7 @@ namespace DNASim {
     // ForceConstantsDB
 #define SEQ_DIM 4
 
-    //Changed by Zoe
+    //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     template <class ArchiveType>
     void save(ArchiveType& archive, const ForceConstantsDB& fmat_db) {
 
@@ -449,7 +449,7 @@ namespace DNASim {
 
     };
 
-    //Changed by Zoe
+    //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     template <class ArchiveType>
     void load(ArchiveType& archive, ForceConstantsDB& fmat_db) {
 

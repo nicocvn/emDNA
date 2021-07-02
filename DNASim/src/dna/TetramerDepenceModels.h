@@ -1,5 +1,5 @@
 // TetramerDepenceModels header
-// Zoe Wefers
+// Zoe Wefers (McGill University, June 2021, DIMACS REU)
 
 
 // list of available depence-dependence models

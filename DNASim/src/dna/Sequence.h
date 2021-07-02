@@ -17,7 +17,7 @@ namespace DNASim {
 
     // nucleotide type enum
     enum class BaseSymbol : Size {
-        A = 0, C = 1, G = 2, T = 3, X = 4 // "X" added by Zoe
+        A = 0, C = 1, G = 2, T = 3, x = 4 // "x" added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     };
 
 
@@ -76,7 +76,7 @@ namespace DNASim {
 
     };
 
-    //Added by Zoe Wefers
+    //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     //TetramerSequence class
     class TetramerSequence{
     

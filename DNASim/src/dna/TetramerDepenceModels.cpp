@@ -1,5 +1,5 @@
 // TetramerDepenceModels struct
-// Zoe Wefers
+// Zoe Wefers (McGill University, June 2021, DIMACS REU)
 
 
 #include "dna/TetramerDepenceModels.h"

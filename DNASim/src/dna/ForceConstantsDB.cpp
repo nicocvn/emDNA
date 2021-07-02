@@ -45,14 +45,14 @@ namespace DNASim {
         // initialization
         for (Size i=0; i<(SEQ_DIM+1); ++i)
             for (Size j=0; j<SEQ_DIM; ++j)
-                for (Size k=0; k<SEQ_DIM; ++k) //Added by Zoe 
-                    for (Size l=0; l<(SEQ_DIM+1); ++l) //Added by Zoe 
-                        m_force_constants[i][j][k][l] = db_data[j][k]; //Changed by Zoe 
+                for (Size k=0; k<SEQ_DIM; ++k) //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+                    for (Size l=0; l<(SEQ_DIM+1); ++l) //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+                        m_force_constants[i][j][k][l] = db_data[j][k]; //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
 
     };
 
 
-    // Added by Zoe: class constructor with full initialization (model name + db data)
+    // class constructor with full initialization (model name + db data)
     ForceConstantsDB::ForceConstantsDB(const std::string& model_name,
                                        const MatrixN (db_data)[SEQ_DIM+1][SEQ_DIM][SEQ_DIM][SEQ_DIM+1]) :
     m_force_constants(),
@@ -68,27 +68,17 @@ namespace DNASim {
         // initialization
         for (Size i=0; i<(SEQ_DIM+1); ++i)
             for (Size j=0; j<SEQ_DIM; ++j)
-                for (Size k=0; k<SEQ_DIM; ++k) //Added by Zoe 
-                    for (Size l=0; l<(SEQ_DIM+1); ++l) //Added by Zoe 
-                        m_force_constants[i][j][k][l] = db_data[i][j][k][l]; //Changed by Zoe 
+                for (Size k=0; k<SEQ_DIM; ++k) //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+                    for (Size l=0; l<(SEQ_DIM+1); ++l) //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+                        m_force_constants[i][j][k][l] = db_data[i][j][k][l]; //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
 
     };
 
     // DB init methods
     void ForceConstantsDB::init_with_model(const std::string& model_name) {
 
-        // look for model name
-        /*
-        auto it = SequenceDependenceModelList.find(model_name);
-        DS_ASSERT(it != SequenceDependenceModelList.end(),
-                  "non-existing sequence-dependence model name: " + model_name);
-
-        // initialization
-        init_data_from_list_of_string(it->second._force_constants_data);
-        */
-
        
-        // Added by Zoe
+        // Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
         auto it1 = SequenceDependenceModelList.find(model_name);
         auto it2 = TetramerDependenceModelList.find(model_name);
         
@@ -118,7 +108,7 @@ namespace DNASim {
         return m_force_constants[4][i][j][4];
     };
 
-    // Added by Zoe
+    // Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     // tetrameric dependent force constants
     const MatrixN&
     ForceConstantsDB::force_constants(const TetramerSequence& tetra_seq) const {
@@ -168,15 +158,15 @@ namespace DNASim {
             const Size idx1 = static_cast<Size>(step_seq.first_base());
             const Size idx2 = static_cast<Size>(step_seq.last_base());
 
-            for (Size j=0; j<(SEQ_DIM+1); ++j) //Added by Zoe
-                for (Size k=0; k<(SEQ_DIM+1); ++k) //Added by Zoe
-                    m_force_constants[j][idx1][idx2][k] = fmat; //Changed by Zoe
+            for (Size j=0; j<(SEQ_DIM+1); ++j) //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+                for (Size k=0; k<(SEQ_DIM+1); ++k) //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+                    m_force_constants[j][idx1][idx2][k] = fmat; //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
             
         };
         
     };
 
-    //Added by Zoe
+    //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     void ForceConstantsDB::
     init_tetrameric_data_from_list_of_string(const std::string data[(SEQ_DIM+1)*SEQ_DIM*SEQ_DIM*(SEQ_DIM+1)]) {
 
@@ -212,7 +202,7 @@ namespace DNASim {
             const Size idx3 = static_cast<Size>(tetra_seq.third_base());
             const Size idx4 = static_cast<Size>(tetra_seq.fourth_base());
             
-            m_force_constants[idx1][idx2][idx3][idx4] = fmat; //Changed by Zoe
+            m_force_constants[idx1][idx2][idx3][idx4] = fmat; //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
             
         };
         
