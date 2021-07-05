@@ -18,10 +18,10 @@ namespace DNASim {
 
 
     // list of tetramer dependence model - step parameters
-    #include "dna/StepParameters_TetramericModel.h"
+    #include "dna/StepParameters_Cohen2017_tet.h"
 
     // list of tetramer dependence model - force constants
-    #include "dna/ForceConstants_TetramericModel.h"
+    #include "dna/ForceConstants_Cohen2017_tet.h"
 
 
     // tetramer-dependence model structure
@@ -40,11 +40,10 @@ namespace DNASim {
     TetramerDependenceModelList {
 
         // TetramericModel
-        { "TetramericModel",
-            TetramerDependenceModelData(StepParameters_TetramericModel,
-                                        ForceConstants_TetramericModel,
-                                        "tetrameric and trimeric data"
-                                        "field")
+        { "Cohen2017_tet",
+            TetramerDependenceModelData(StepParameters_Cohen2017_tet,
+                                        ForceConstants_Cohen2017_tet,
+                                        "Tetrameric force field from Cohen (2017)")
         }
 
     };
