@@ -71,8 +71,8 @@ namespace DNASim {
         // initialization
         for (Size i=0; i<(SEQ_DIM+1); ++i)
             for (Size j=0; j<SEQ_DIM; ++j)
-                for (Size k=0; k<SEQ_DIM; ++k) //Added by Zoe
-                    for (Size l=0; l<(SEQ_DIM+1); ++l) //Added by Zoe
+                for (Size k=0; k<SEQ_DIM; ++k) //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+                    for (Size l=0; l<(SEQ_DIM+1); ++l) //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
                         m_step_parameters[i][j][k][l] = db_data[i][j][k][l];
 
     };
