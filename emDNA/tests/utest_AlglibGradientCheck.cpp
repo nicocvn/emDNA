@@ -19,6 +19,7 @@ namespace {
         BpCollection bp_collection =
         BpCollection::collection_from_base_pairs(test_base_pairs);
         bp_collection.set_collection_dummy_sequence();
+        //bp_collection.set_sequence_dependence_model("TetramericModel"); // Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
         bp_collection.set_sequence_dependence_model("AnisoDNA");
 
         // bp collection interface

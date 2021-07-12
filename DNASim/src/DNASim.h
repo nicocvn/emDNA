@@ -15,9 +15,12 @@
 #include "dna/ForceConstants_AnisoDNA.h"
 #include "dna/ForceConstants_IdealDNA.h"
 #include "dna/ForceConstants_Olson1998.h"
+#include "dna/ForceConstants_Cohen2017_tet.h" //Added by Zoe Wefers (McGill University, July 2021, DIMACS REU)
+#include "dna/ForceConstants_Cohen2017_dim.h" //Added by Zoe Wefers (McGill University, July 2021, DIMACS REU)
 #include "dna/Parser_x3DNA.h"
 #include "dna/Sequence.h"
 #include "dna/SequenceDepenceModels.h"
+#include "dna/TetramerDepenceModels.h" //Added by Zoe Wefers (McGill University, July 2021, DIMACS REU)
 #include "dna/StepArray.h"
 #include "dna/StepParameters.h"
 #include "dna/StepParametersDB.h"
@@ -26,6 +29,8 @@
 #include "dna/StepParameters_IdealDNA.h"
 #include "dna/StepParameters_IdealDNA_304.h"
 #include "dna/StepParameters_Olson1998.h"
+#include "dna/StepParameters_Cohen2017_tet.h" //Added by Zoe Wefers (McGill University, July 2021, DIMACS REU)
+#include "dna/StepParameters_Cohen2017_dim.h" //Added by Zoe Wefers (McGill University, July 2021, DIMACS REU)
 
 // file_io
 #include "file_io/EnhancedString.h"

@@ -74,6 +74,7 @@ public:
 
     // step sequence-dependent data accessors
     const StepSequence& bp_step_sequence(Size step_index) const;
+    const TetramerSequence& bp_tetramer_sequence(Size step_index) const; //added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     const BpStepParams bp_step_intrinsic_parameters(Size step_index) const;
     const MatrixN& bp_step_force_constants(Size step_index) const;
 
@@ -95,6 +96,7 @@ private:
 
     // sequence-dependence data
     std::vector<StepSequence> m_step_sequences;
+    std::vector<TetramerSequence> m_tetramer_sequences; //added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     StepParametersDB m_step_seqdep;
     ForceConstantsDB m_fmat_seqdep;
 

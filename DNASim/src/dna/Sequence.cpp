@@ -13,7 +13,7 @@ namespace DNASim {
     // static methods
     std::string Base::str(const BaseSymbol& base) {
         // the following array has to be ordered as the BaseSymbol enum
-        const std::string str[4] = {"A", "C", "G", "T"};
+        const std::string str[5] = {"A", "C", "G", "T", "x"};
         return str[static_cast<Size>(base)];
     };
     BaseSymbol Base::base_symbol_from_char(const char s) {
@@ -25,6 +25,8 @@ namespace DNASim {
             return BaseSymbol::G;
         else if (s == 'T')
             return BaseSymbol::T;
+        else if (s == 'x')  // Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+            return BaseSymbol::x;
         else
             DS_ASSERT(false, "wrong base symbol:\n"+std::string(&s));
     };
@@ -37,6 +39,8 @@ namespace DNASim {
             return BaseSymbol::G;
         else if (base == BaseSymbol::G)
             return BaseSymbol::C;
+        else if (base == BaseSymbol::x) //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+            return BaseSymbol::x;
         else
             DS_ASSERT(false, "wrong base symbol:\n"+str(base));
     };
@@ -58,6 +62,29 @@ namespace DNASim {
         return m_bases.second;
     };
 
+
+
+    // Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+    /*** TetramerSequence class ***/
+    TetramerSequence::TetramerSequence(const BaseSymbol& base_1, 
+                                        const BaseSymbol& base_2,
+                                        const BaseSymbol& base_3, 
+                                        const BaseSymbol& base_4) :
+    m_bases(base_1, base_2, base_3, base_4) {};
+
+    //base acessors
+    const BaseSymbol& TetramerSequence::first_base() const {
+        return std::get<0>(m_bases);
+    };
+    const BaseSymbol& TetramerSequence::second_base() const {
+        return std::get<1>(m_bases);
+    };
+    const BaseSymbol& TetramerSequence::third_base() const {
+        return std::get<2>(m_bases);
+    };
+    const BaseSymbol& TetramerSequence::fourth_base() const {
+        return std::get<3>(m_bases);
+    };
 
     /*** Sequence class ***/
 
