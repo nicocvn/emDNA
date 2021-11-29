@@ -5,10 +5,12 @@ The modeling and numerical methods are described in the following publications:
 
 - [The synergy between protein positioning and DNA elasticity: energy minimization of protein-decorated DNA minicircles](https://pubs.acs.org/doi/10.1021/acs.jpcb.0c11612) (preprint publicly available on [arXiv.org](https://arxiv.org/abs/1405.7638))
 
+## Contributors
+- [Nicolas Clauvelin](https://github.com/nicocvn)
+- [Robert Young](https://github.com/rty10) (Olson lab at Rutgers University)
 
 ## Pre-build versions
-
+See [releases pages](https://github.com/nicocvn/emDNA/releases).
 
 ## Build instructions
-
-[Build instructions](INSTALL.md)
+See [build instructions](INSTALL.md) documentation.
