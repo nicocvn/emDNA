@@ -1,0 +1,7 @@
+collection_type=EEDR
+base_collection=x3DNAparams:N336.par
+protein_collection=x3DNAparams:n141.par
+protein_binding_sites=1
+base_bound_domains=1:141
+binding_ramp_sampling=100
+base_seqdep_model=IdealDNA
