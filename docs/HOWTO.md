@@ -56,15 +56,15 @@ Input file guidelines
 ## Command-line File Parsing: emDNA_parser
 This tool can be used to convert data in one of the x3DNA format to any other format. In case data in a x3DNA format are converted to the bplist format, the sequence information are lost.
 
-Input commands available: --x3DNA-bp-step-params-input=\*<string\*>, --x3DNA-bp-input=\*<string\*>, --bp-list-input=\*<string\*> <br>
-Output commands: --get-x3DNA-params\*>\*<string\*>, --get-x3DNA-bp\*>\*<string\*>, --get-bp-list\*>\*<string\*> <br>
+Input commands available: --x3DNA-bp-step-params-input=\<string\>, --x3DNA-bp-input=\<string\>, --bp-list-input=\<string\> <br>
+Output commands: --get-x3DNA-params\>\<string\>, --get-x3DNA-bp\>\<string\>, --get-bp-list\>\<string\> <br>
 Make sure that within each string you indicate desired file extensions, such as .par, .txt, or (for x3DNAbp) .dat<br>
   
 Example: 
 ```
 $ emDNA_parser --x3DNA-bp-input=test.dat --get-x3DNA-params>test.par
 ```
-For additional assistance, use ```$ emDNA-parser --help```
+For additional assistance, use ```$ emDNA_parser --help```
 
 ## Command-line Forcefield Packaging: emDNA_ff_packager
 emDNA can use an external force field (that is, a set of intrinsic step parameters and a set of force constant matrices). In order to use an external force field, the data needs to be packaged using the tool emDNA_force_field.
