@@ -20,7 +20,7 @@ An example of the parameter format
 T-A     -0.083    -0.197    -0.212     1.146   -12.278    -5.051    -0.264    -0.347     3.194     2.012    -1.575    35.719
 ```
 The parsing of such file in emDNA expects that every line which is not describing a set of step parameters is either empty or starting with a #.
-Details surrounding the parameters file can be found at [w3DNA 2.0](web.x3dna.org/index.php/rebuild)
+Details surrounding the parameters file can be found at [w3DNA 2.0](http://web.x3dna.org/index.php/rebuild)
 
 ### x3DNAbp
 The x3DNAbp format corresponds to a description of every base pair in the collection as a series of origin values and reference frames for each base pair. 
@@ -35,7 +35,7 @@ An example of a base pair format:
 ```
 The first line indicates the index of the base pair (numbering starts at 1). The first line always starts with the ... characters and always contains the base-pair sequence after the index (that is, the two nucleotides forming the base pair). 
 The second line describe the coordinates of the base-pair origin with respect to a global Cartesian coordinate system.
-The remaining three lines describe the coordinate frame of the base pair. While the data after the # is not relevant and can be omitted, the third line describes the d1 or "short" axis that points into the major groove; the fourth describes the d2 ("long" axis) that points toward the backbone chain of the coding strand, and the fifth describe the d3 axis, which is cross product of d1 and d2 and points in the 5`-3` direction.
+The remaining three lines describe the coordinate frame of the base pair. While the data after the # is not relevant and can be omitted, the third line describes the d1 or "short" axis that points into the major groove; the fourth describes the d2 ("long" axis) that points toward the backbone chain of the coding strand, and the fifth describe the d3 axis, which is cross product of d1 and d2 and points in the 5` - 3` direction.
 
 The parsing of such file in emDNA expects that every line which is not describing a base pair is either empty or starting with a #.
 
