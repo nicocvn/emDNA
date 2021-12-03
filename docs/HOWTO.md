@@ -2,7 +2,7 @@
 The emDNA software package is developed as a tool to conduct elastic energy minimization calculations on a collection of DNA base pairs at the base-pair step level. 
 Note: Arguments, flags and options are passed as with any standard UNIX programs, that is:
 ```
-$ emDNA-tool --argument=value --flag --optional-parameter=some_value --optional-flag
+$ emDNA_tool --argument=value --flag --optional-parameter=some_value --optional-flag
 ```
 
 ## Data formats
@@ -53,7 +53,7 @@ Input file guidelines
 - When using x3DNA formats, make sure that every line which is not containing data starts with a #; in particular, x3DNA sometimes add information in the first lines that should be commented.
 - When using a format encoding base-pair frames make sure your frames are orthogonalized.
 
-## Command-line File Parsing: emDNA-parser
+## Command-line File Parsing: emDNA_parser
 This tool can be used to convert data in one of the x3DNA format to any other format. In case data in a x3DNA format are converted to the bplist format, the sequence information are lost.
 Input commands available: --x3DNA-bp-step-params-input=<string>, --x3DNA-bp-input=<string>, --bp-list-input=<string>
 Output commands: --get-x3DNA-params><string>, --get-x3DNA-bp><string>, --get-bp-list><string>
@@ -65,7 +65,7 @@ $ emDNA-parser --x3DNA-bp-input=test.dat --get-x3DNA-params>test.par
 ```
 For additional assistance, use ```$ emDNA-parser --help```
 
-## Command-line Forcefield Packaging: emDNA-ff-packager
+## Command-line Forcefield Packaging: emDNA_ff_packager
 emDNA can use an external force field (that is, a set of intrinsic step parameters and a set of force constant matrices). In order to use an external force field, the data needs to be packaged using the tool emDNA_force_field.
 
 ### Preparing the data
@@ -104,21 +104,21 @@ To package the force field one has to use the emDNA_force_field. The tool requir
   
 A command line example:
 ```
-$ emDNA-ff-packager --intrinsic-steps-input=steps.txt --force-constants-input=fmat.txt --model-name=my_force_field
+$ emDNA_ff_packager --intrinsic-steps-input=steps.txt --force-constants-input=fmat.txt --model-name=my_force_field
 ```
 
 For additional assistance, use ```$ emDNA-ff-packager --help```
 
-## Command-line Check Collisions: emDNA-check-collisions
+## Command-line Check Collisions: emDNA_check_collisions
 To be added
   
-## Command-line Force Probe: emDNA-force-probe
+## Command-line Force Probe: emDNA_force_probe
 To be added
   
-## Command-line Protein Binding: emDNA-pro-bind
+## Command-line Protein Binding: emDNA_probind
 To be added
   
-## Command-line Optimizations: emDNA-cli
+## Command-line Optimizations: emDNA
 
 The emDNA-cli tool is what conducts the optimization calculation. This tool requires:
 - An input file (either in the x3DNAparams, x3DNAbp, or bp-list format)
@@ -168,13 +168,13 @@ Below is the list of all options that can be used to customize the optimization:
 
 A command line example:
 ```
-$ emDNA-cli --x3DNA-bp-step-params-input=test.par --DNA-seqdep-model=IdealDNA --energy-progress --hold-last-bp --output-name=test
+$ emDNA --x3DNA-bp-step-params-input=test.par --DNA-seqdep-model=IdealDNA --energy-progress --hold-last-bp --output-name=test
 ```
 
-For additional assistance, use ```$ emDNA-cli --help```
+For additional assistance, use ```$ emDNA --help```
 
   
-## Command-line Topology Data
+## Command-line Topology Data: emDNA_topology
 A useful tool for both initial and optimized structures, higher-order information can be collected regarding the base pair collection's Linking Number, Twist, and Writhe. The only requirement is some input file.
 Additional options include:
 * ```--twist-density```: outputs the twist density along the collection of base pairs
@@ -183,9 +183,9 @@ In addition, to specify an output name, use of '>' must follow the input file
 
 A command-line example:
 ```
-$ emDNA-topology --x3DNA-bp-input=test.dat>test_topology.txt --virtual-last-bp
+$ emDNA_topology --x3DNA-bp-input=test.dat>test_topology.txt --virtual-last-bp
 ```
-For additional assistance, use ```$ emDNA-topology --help```
+For additional assistance, use ```$ emDNA_topology --help```
   
 ## Additional Details
 ### The Log File
