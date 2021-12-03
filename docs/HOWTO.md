@@ -7,9 +7,9 @@ $ emDNA_tool --argument=value --flag --optional-parameter=some_value --optional-
 
 ## Data formats
 emDNA can read and write data base-pair collection data in three formats, each with their own benefits:
-- x3DNA base-pair step parameters format ([x3DNAparams](#x3DNAparams))
-- x3DNA base-pair reference frames format ([x3DNAbp](#x3DNAbp))
-- base pair list format ([bplist](#bplist))
+- x3DNA base-pair step parameters format ([x3DNAparams](#x3DNAparams))<br>
+- x3DNA base-pair reference frames format ([x3DNAbp](#x3DNAbp))<br>
+- base pair list format ([bplist](#bplist))<br>
 
 ### x3DNAparams
 The x3DNAparams format corresponds to a list of all the step parameters. The file usually contains a header indicating the type of the parameters. emDNA only uses the rigid-body base-pair parameters and hence the base parameters are not relevant; therefore, it is important that the value in the second line of the header is set to 0. Also, the header is not required for parsing.
@@ -56,12 +56,9 @@ Input file guidelines
 ## Command-line File Parsing: emDNA_parser
 This tool can be used to convert data in one of the x3DNA format to any other format. In case data in a x3DNA format are converted to the bplist format, the sequence information are lost.
 
-Input commands available: --x3DNA-bp-step-params-input=<string>, --x3DNA-bp-input=<string>, --bp-list-input=<string>
-   
-Output commands: --get-x3DNA-params>"<string>", --get-x3DNA-bp>"<string>", --get-bp-list>"<string>"
-   
-Make sure that within each string you indicate desired file extensions, such as .par, .txt, or (for x3DNAbp) .dat
-   
+Input commands available: --x3DNA-bp-step-params-input=\*<string\*>, --x3DNA-bp-input=\*<string\*>, --bp-list-input=\*<string\*> <br>
+Output commands: --get-x3DNA-params\*>\*<string\*>, --get-x3DNA-bp\*>\*<string\*>, --get-bp-list\*>\*<string\*> <br>
+Make sure that within each string you indicate desired file extensions, such as .par, .txt, or (for x3DNAbp) .dat<br>
   
 Example: 
 ```
