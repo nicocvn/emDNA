@@ -14,3 +14,15 @@ See [releases pages](https://github.com/nicocvn/emDNA/releases).
 
 ## Build instructions
 See [build instructions](INSTALL.md) documentation.
+
+## Usage instructions
+See [emDNA usage](HOWTO.md) for details about the commands, options, formatting, and more.
+
+## Special Issue: Computational Resources- 2022, Journal of Molecular Biology
+In 2021, a manuscript was submitted to the Journal of Molecular Biology for the 2022 Special Issue on Computational Resources. In it included case studies for users. Users can be supplemental instructions, scripts, and optimized data [here](https://github.com/nicocvn/emDNA/tree/master/emDNA_examples/Case%20Study-%20JMolBiol%202022).
+
+## emDNA in Action
+See the list below of where emDNA has been used (list updated December 2021):
+- [Designed architectural proteins that tune DNA looping in bacteria](https://academic.oup.com/nar/article/49/18/10382/6363766)
+- [Surprising Twists in Nucleosomal DNA with Implication for Higher-order Folding](https://doi.org/10.1016/j.jmb.2021.167121)
+- [Insights into genome architecture deduced from the properties of short Lac repressor-mediated DNA loops](http://dx.doi.org/10.1007/s12551-016-0209-7)
