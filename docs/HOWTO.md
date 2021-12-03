@@ -108,20 +108,13 @@ A command line example:
 $ emDNA_ff_packager --intrinsic-steps-input=steps.txt --force-constants-input=fmat.txt --model-name=my_force_field
 ```
 
-For additional assistance, use ```$ emDNA-ff-packager --help```
+For additional assistance, use ```$ emDNA_ff_packager --help```
 
-## Command-line Check Collisions: emDNA_check_collisions
-To be added
-  
-## Command-line Force Probe: emDNA_force_probe
-To be added
-  
-## Command-line Protein Binding: emDNA_probind
-To be added
+
   
 ## Command-line Optimizations: emDNA
 
-The emDNA-cli tool is what conducts the optimization calculation. This tool requires:
+The emDNA cli tool is what conducts the optimization calculation. This tool requires:
 - An input file (either in the x3DNAparams, x3DNAbp, or bp-list format)
 - A forcefield (either pre-loaded or an external forcefield)
 - Specific end conditions to be applied to the initial base pair collection
@@ -174,6 +167,15 @@ $ emDNA --x3DNA-bp-step-params-input=test.par --DNA-seqdep-model=IdealDNA --ener
 
 For additional assistance, use ```$ emDNA --help```
 
+  
+## Command-line Protein Binding: emDNA_probind
+Details coming soon.
+
+## Command-line Check Collisions: emDNA_check_collisions
+Coming Soon
+  
+## Command-line Force Probe: emDNA_force_probe
+Coming Soon
   
 ## Command-line Topology Data: emDNA_topology
 A useful tool for both initial and optimized structures, higher-order information can be collected regarding the base pair collection's Linking Number, Twist, and Writhe. The only requirement is some input file.
