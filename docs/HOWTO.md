@@ -20,7 +20,7 @@ An example of the parameter format
 T-A     -0.083    -0.197    -0.212     1.146   -12.278    -5.051    -0.264    -0.347     3.194     2.012    -1.575    35.719
 ```
 The parsing of such file in emDNA expects that every line which is not describing a set of step parameters is either empty or starting with a #.
-Details surrounding the parameters file can be found at [web.x3DNA](web.x3dna.org/index.php/rebuild)
+Details surrounding the parameters file can be found at [w3DNA 2.0](web.x3dna.org/index.php/rebuild)
 
 ### x3DNAbp
 The x3DNAbp format corresponds to a description of every base pair in the collection as a series of origin values and reference frames for each base pair. 
