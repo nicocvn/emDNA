@@ -58,7 +58,7 @@ This tool can be used to convert data in one of the x3DNA format to any other fo
 
 Input commands available: --x3DNA-bp-step-params-input=<string>, --x3DNA-bp-input=<string>, --bp-list-input=<string>
    
-Output commands: --get-x3DNA-params><string>, --get-x3DNA-bp><string>, --get-bp-list><string>
+Output commands: --get-x3DNA-params>"<string>", --get-x3DNA-bp>"<string>", --get-bp-list>"<string>"
    
 Make sure that within each string you indicate desired file extensions, such as .par, .txt, or (for x3DNAbp) .dat
    
