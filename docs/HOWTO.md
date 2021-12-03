@@ -43,7 +43,9 @@ The parsing of such file in emDNA expects that every line which is not describin
 The bp list format correspond to a bracket-list format readable in Mathematica. This format does not include any sequence information and, hence, is not suitable for sequence-dependent computations.
 
 The format encodes a base-pair frame as:
-```{{origin_x,origin_y,origin_z}, {{d1x,d1y,d1z}, {d2x,d2y,d2z}, {d3x,d3y,d3z}}}```
+```
+\{\{origin_x,origin_y,origin_z\}, \{\{d1x,d1y,d1z\}, \{d2x,d2y,d2z\}, \{d3x,d3y,d3z\}\}\}
+```
 An input file in bp list format is composed by a list of base pair frames descibed in the x3DNAbp format above (each on a separate line).
 
 Input file guidelines
