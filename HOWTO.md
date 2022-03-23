@@ -2,14 +2,14 @@
 The emDNA software package is developed as a tool to conduct elastic energy minimization calculations on a collection of DNA base pairs at the base-pair step level. 
 Note: Arguments, flags and options are passed as with any standard UNIX programs, that is:
 ```
-$ emDNA-tool --argument=value --flag --optional-parameter=some_value --optional-flag
+$ emDNA_tool --argument=value --flag --optional-parameter=some_value --optional-flag
 ```
 
 ## Data formats
 emDNA can read and write data base-pair collection data in three formats, each with their own benefits:
-- x3DNA base-pair step parameters format ([x3DNAparams](#x3DNAparams))
-- x3DNA base-pair reference frames format ([x3DNAbp](#x3DNAbp))
-- base pair list format ([bplist](#bplist))
+- x3DNA base-pair step parameters format ([x3DNAparams](#x3DNAparams))<br>
+- x3DNA base-pair reference frames format ([x3DNAbp](#x3DNAbp))<br>
+- base pair list format ([bplist](#bplist))<br>
 
 ### x3DNAparams
 The x3DNAparams format corresponds to a list of all the step parameters. The file usually contains a header indicating the type of the parameters. emDNA only uses the rigid-body base-pair parameters and hence the base parameters are not relevant; therefore, it is important that the value in the second line of the header is set to 0. Also, the header is not required for parsing.
@@ -20,7 +20,7 @@ An example of the parameter format
 T-A     -0.083    -0.197    -0.212     1.146   -12.278    -5.051    -0.264    -0.347     3.194     2.012    -1.575    35.719
 ```
 The parsing of such file in emDNA expects that every line which is not describing a set of step parameters is either empty or starting with a #.
-Details surrounding the parameters file can be found at [web.x3DNA](web.x3dna.org/index.php/rebuild)
+Details surrounding the parameters file can be found at [w3DNA 2.0](http://web.x3dna.org/index.php/rebuild)
 
 ### x3DNAbp
 The x3DNAbp format corresponds to a description of every base pair in the collection as a series of origin values and reference frames for each base pair. 
@@ -35,7 +35,7 @@ An example of a base pair format:
 ```
 The first line indicates the index of the base pair (numbering starts at 1). The first line always starts with the ... characters and always contains the base-pair sequence after the index (that is, the two nucleotides forming the base pair). 
 The second line describe the coordinates of the base-pair origin with respect to a global Cartesian coordinate system.
-The remaining three lines describe the coordinate frame of the base pair. While the data after the # is not relevant and can be omitted, the third line describes the d1 or "short" axis that points into the major groove; the fourth describes the d2 ("long" axis) that points toward the backbone chain of the coding strand, and the fifth describe the d3 axis, which is cross product of d1 and d2 and points in the 5`-3` direction.
+The remaining three lines describe the coordinate frame of the base pair. While the data after the # is not relevant and can be omitted, the third line describes the d1 or "short" axis that points into the major groove; the fourth describes the d2 ("long" axis) that points toward the backbone chain of the coding strand, and the fifth describe the d3 axis, which is cross product of d1 and d2 and points in the 5\`-3\` direction.
 
 The parsing of such file in emDNA expects that every line which is not describing a base pair is either empty or starting with a #.
 
@@ -53,19 +53,20 @@ Input file guidelines
 - When using x3DNA formats, make sure that every line which is not containing data starts with a #; in particular, x3DNA sometimes add information in the first lines that should be commented.
 - When using a format encoding base-pair frames make sure your frames are orthogonalized.
 
-## Command-line File Parsing: emDNA-parser
+## Command-line File Parsing: emDNA_parser
 This tool can be used to convert data in one of the x3DNA format to any other format. In case data in a x3DNA format are converted to the bplist format, the sequence information are lost.
-Input commands available: --x3DNA-bp-step-params-input=<string>, --x3DNA-bp-input=<string>, --bp-list-input=<string>
-Output commands: --get-x3DNA-params><string>, --get-x3DNA-bp><string>, --get-bp-list><string>
-Make sure that within each string you indicate desired file extensions, such as .par, .txt, or (for x3DNAbp) .dat
+
+Input commands available: --x3DNA-bp-step-params-input=\<string\>, --x3DNA-bp-input=\<string\>, --bp-list-input=\<string\> <br>
+Output commands: --get-x3DNA-params\>\<string\>, --get-x3DNA-bp\>\<string\>, --get-bp-list\>\<string\> <br>
+Make sure that within each string you indicate desired file extensions, such as .par, .txt, or (for x3DNAbp) .dat<br>
   
 Example: 
 ```
-$ emDNA-parser --x3DNA-bp-input=test.dat --get-x3DNA-params>test.par
+$ emDNA_parser --x3DNA-bp-input=test.dat --get-x3DNA-params>test.par
 ```
-For additional assistance, use ```$ emDNA-parser --help```
+For additional assistance, use ```$ emDNA_parser --help```
 
-## Command-line Forcefield Packaging: emDNA-ff-packager
+## Command-line Forcefield Packaging: emDNA_ff_packager
 emDNA can use an external force field (that is, a set of intrinsic step parameters and a set of force constant matrices). In order to use an external force field, the data needs to be packaged using the tool emDNA_force_field.
 
 ### Preparing the data
@@ -104,23 +105,16 @@ To package the force field one has to use the emDNA_force_field. The tool requir
   
 A command line example:
 ```
-$ emDNA-ff-packager --intrinsic-steps-input=steps.txt --force-constants-input=fmat.txt --model-name=my_force_field
+$ emDNA_ff_packager --intrinsic-steps-input=steps.txt --force-constants-input=fmat.txt --model-name=my_force_field
 ```
 
-For additional assistance, use ```$ emDNA-ff-packager --help```
+For additional assistance, use ```$ emDNA_ff_packager --help```
 
-## Command-line Check Collisions: emDNA-check-collisions
-To be added
-  
-## Command-line Force Probe: emDNA-force-probe
-To be added
-  
-## Command-line Protein Binding: emDNA-pro-bind
-To be added
-  
-## Command-line Optimizations: emDNA-cli
 
-The emDNA-cli tool is what conducts the optimization calculation. This tool requires:
+  
+## Command-line Optimizations: emDNA
+
+The emDNA cli tool is what conducts the optimization calculation. This tool requires:
 - An input file (either in the x3DNAparams, x3DNAbp, or bp-list format)
 - A forcefield (either pre-loaded or an external forcefield)
 - Specific end conditions to be applied to the initial base pair collection
@@ -168,13 +162,22 @@ Below is the list of all options that can be used to customize the optimization:
 
 A command line example:
 ```
-$ emDNA-cli --x3DNA-bp-step-params-input=test.par --DNA-seqdep-model=IdealDNA --energy-progress --hold-last-bp --output-name=test
+$ emDNA --x3DNA-bp-step-params-input=test.par --DNA-seqdep-model=IdealDNA --energy-progress --hold-last-bp --output-name=test
 ```
 
-For additional assistance, use ```$ emDNA-cli --help```
+For additional assistance, use ```$ emDNA --help```
 
   
-## Command-line Topology Data
+## Command-line Protein Binding: emDNA_probind
+Details coming soon.
+
+## Command-line Check Collisions: emDNA_check_collisions
+Coming Soon
+  
+## Command-line Force Probe: emDNA_force_probe
+Coming Soon
+  
+## Command-line Topology Data: emDNA_topology
 A useful tool for both initial and optimized structures, higher-order information can be collected regarding the base pair collection's Linking Number, Twist, and Writhe. The only requirement is some input file.
 Additional options include:
 * ```--twist-density```: outputs the twist density along the collection of base pairs
@@ -183,9 +186,9 @@ In addition, to specify an output name, use of '>' must follow the input file
 
 A command-line example:
 ```
-$ emDNA-topology --x3DNA-bp-input=test.dat>test_topology.txt --virtual-last-bp
+$ emDNA_topology --x3DNA-bp-input=test.dat>test_topology.txt --virtual-last-bp
 ```
-For additional assistance, use ```$ emDNA-topology --help```
+For additional assistance, use ```$ emDNA_topology --help```
   
 ## Additional Details
 ### The Log File
