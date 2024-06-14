@@ -135,6 +135,7 @@ std::string BpCollection::collection_sequence() const {
     full_sequence += Base::str(m_step_sequences.back().last_base());
     return full_sequence;
 };
+
 void BpCollection::set_collection_sequence(const std::string& sequence) {
     m_step_sequences.clear();
     for (Size i=0; i<sequence.size()-1; ++i) {
@@ -144,11 +145,46 @@ void BpCollection::set_collection_sequence(const std::string& sequence) {
                                Base::
                                base_symbol_from_char(sequence[i+1])));
     };
+
+    // Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+    char x_char = 'x';
+    m_tetramer_sequences.clear();
+    for(Size i=0; i<sequence.size()-1; ++i){
+        if (i == 0){
+            m_tetramer_sequences.
+            push_back(TetramerSequence(Base::base_symbol_from_char(x_char),
+                                        Base::base_symbol_from_char(sequence[i]),
+                                        Base::base_symbol_from_char(sequence[i+1]),
+                                        Base::base_symbol_from_char(sequence[i+2])));
+        }
+        else if (i == sequence.size()-2) {
+            m_tetramer_sequences.
+            push_back(TetramerSequence(Base::base_symbol_from_char(sequence[i-1]),
+                                        Base::base_symbol_from_char(sequence[i]),
+                                        Base::base_symbol_from_char(sequence[i+1]),
+                                        Base::base_symbol_from_char(x_char)));
+        }
+        else {
+            m_tetramer_sequences.
+            push_back(TetramerSequence(Base::base_symbol_from_char(sequence[i-1]),
+                                    Base::base_symbol_from_char(sequence[i]),
+                                    Base::base_symbol_from_char(sequence[i+1]),
+                                    Base::base_symbol_from_char(sequence[i+2])));
+        }
+        
+    };
+    
 };
+
 void BpCollection::set_collection_dummy_sequence() {
     m_step_sequences.clear();
     for (Size i=0; i<n_of_bp_steps(); ++i)
         m_step_sequences.push_back(StepSequence(BaseSymbol::A,BaseSymbol::A));
+
+    // Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+    m_tetramer_sequences.clear(); 
+    for (Size i=0; i<n_of_bp_steps(); ++i)
+        m_tetramer_sequences.push_back(TetramerSequence(BaseSymbol::A,BaseSymbol::A,BaseSymbol::A,BaseSymbol::A));
 };
 
 
@@ -176,20 +212,26 @@ set_sequence_dependence_model(const StepParametersDB& steps_db,
 const StepSequence& BpCollection::bp_step_sequence(Size step_index) const {
     return m_step_sequences[step_index];
 };
+
+//Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+const TetramerSequence& BpCollection::bp_tetramer_sequence(Size step_index) const {
+    return m_tetramer_sequences[step_index];
+};
+
 const BpStepParams
 BpCollection::bp_step_intrinsic_parameters(Size step_index) const {
 
     // StepParameters data
     const VectorN p =
-    m_step_seqdep.intrinsic_bp_step_params(m_step_sequences[step_index]).
-    inline_vector();
+    m_step_seqdep.intrinsic_bp_step_params(m_tetramer_sequences[step_index]).
+    inline_vector(); //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
 
     // convert to BpStepParams
     return BpStepParams(p);
 
 };
 const MatrixN& BpCollection::bp_step_force_constants(Size step_index) const {
-    return m_fmat_seqdep.force_constants(m_step_sequences[step_index]);
+    return m_fmat_seqdep.force_constants(m_tetramer_sequences[step_index]); //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
 };
 
 

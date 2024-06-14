@@ -17,7 +17,7 @@ namespace DNASim {
 
     // nucleotide type enum
     enum class BaseSymbol : Size {
-        A = 0, C = 1, G = 2, T = 3
+        A = 0, C = 1, G = 2, T = 3, x = 4 // "x" added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     };
 
 
@@ -75,6 +75,35 @@ namespace DNASim {
 
 
     };
+
+    //Added by Zoe Wefers (McGill University, June 2021, DIMACS REU)
+    //TetramerSequence class
+    class TetramerSequence{
+    
+    public:
+        //constructors
+        TetramerSequence() = default;
+        TetramerSequence(const BaseSymbol& n1, const BaseSymbol& n2, const BaseSymbol& n3, const BaseSymbol& n4);
+        TetramerSequence(const TetramerSequence& tetra_sequence) = default;
+        TetramerSequence(TetramerSequence&& tetra_sequence) = default;
+        ~TetramerSequence() = default;
+
+        // copy and move operators (not sure what these are for)
+        TetramerSequence& operator=(const TetramerSequence& tetra_sequence) = default;
+        TetramerSequence& operator=(TetramerSequence&& tetra_sequence) = default;
+
+        // base accessors
+        const BaseSymbol& first_base() const;
+        const BaseSymbol& second_base() const;
+        const BaseSymbol& third_base() const;
+        const BaseSymbol& fourth_base() const;
+
+    private:
+        std::tuple<BaseSymbol, BaseSymbol, BaseSymbol, BaseSymbol> m_bases;
+
+    };
+
+
 
 
     // Sequence class

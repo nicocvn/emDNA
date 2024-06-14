@@ -334,6 +334,8 @@ namespace DNASim {
 
     // StepParametersDB
 #define SEQ_DIM 4
+
+    //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     template <class ArchiveType>
     void save(ArchiveType& archive, const StepParametersDB& steps_db) {
 
@@ -341,25 +343,35 @@ namespace DNASim {
         archive(cereal::make_nvp("model_name", steps_db.model_name()));
 
         // intrinsic step parameters
-        for (Size i=0; i<SEQ_DIM; ++i)
-            for (Size j=0; j<SEQ_DIM; ++j) {
+        for (Size i=0; i<SEQ_DIM+1; ++i)
+            for (Size j=0; j<SEQ_DIM; ++j)
+                for (Size k=0; k<SEQ_DIM; ++k)
+                    for (Size l=0; l<SEQ_DIM+1; ++l) {
 
-                // nucleotides
-                const BaseSymbol first = static_cast<BaseSymbol>(i);
-                const BaseSymbol last = static_cast<BaseSymbol>(j);
-                const StepSequence step_seq(first, last);
+                        // nucleotides
+                        const BaseSymbol first = static_cast<BaseSymbol>(i);
+                        const BaseSymbol second = static_cast<BaseSymbol>(j);
+                        const BaseSymbol third = static_cast<BaseSymbol>(k);
+                        const BaseSymbol fourth = static_cast<BaseSymbol>(l);
+                        const TetramerSequence tetra_seq(first, second, third, fourth);
 
-                // save
-                archive(cereal::make_nvp("first_base",
-                                         Base::str(first)),
-                        cereal::make_nvp("last_base",
-                                         Base::str(last)),
-                        cereal::make_nvp("intrinsic_step",
-                                         steps_db.
-                                         intrinsic_bp_step_params(step_seq)));
-            }
+                        // save
+                        archive(cereal::make_nvp("first_base",
+                                                    Base::str(first)),
+                                cereal::make_nvp("second_base",
+                                                    Base::str(second)),
+                                cereal::make_nvp("third_base",
+                                                    Base::str(third)),
+                                cereal::make_nvp("fourth_base",
+                                                    Base::str(fourth)),
+                                cereal::make_nvp("intrinsic_step",
+                                                    steps_db.
+                                                    intrinsic_bp_step_params(tetra_seq)));
+                    }
 
     };
+
+    //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     template <class ArchiveType>
     void load(ArchiveType& archive, StepParametersDB& steps_db) {
 
@@ -368,26 +380,30 @@ namespace DNASim {
         archive(model_name);
 
         // intrinsic step parameters
-        StepParameters db_data[SEQ_DIM][SEQ_DIM];
-        for (Size i=0; i<SEQ_DIM; ++i)
-            for (Size j=0; j<SEQ_DIM; ++j) {
+        StepParameters db_data[SEQ_DIM+1][SEQ_DIM][SEQ_DIM][SEQ_DIM+1];
+        for (Size i=0; i<SEQ_DIM+1; ++i)
+            for (Size j=0; j<SEQ_DIM; ++j)
+                for (Size k=0; k<SEQ_DIM; ++k)
+                    for (Size l=0; l<SEQ_DIM+1; ++l) {
+                        
+                        // load
+                        std::string first_str, second_str, third_str, fourth_str;
+                        StepParameters step_params;
+                        archive(first_str, second_str, third_str, fourth_str, step_params);
 
-                // load
-                std::string first_str, last_str;
-                StepParameters step_params;
-                archive(first_str, last_str, step_params);
-
-                // nucleotide types
-                const char s1 = first_str.c_str()[0];
-                const char s2 = last_str.c_str()[0];
-                BaseSymbol first = Base::base_symbol_from_char(s1);
-                BaseSymbol last = Base::base_symbol_from_char(s2);
-                
-                // array filling
-                db_data[(Size)first][(Size)last] = step_params;
-                
-            }
-        
+                        // nucleotide types
+                        const char s1 = first_str.c_str()[0];
+                        const char s2 = second_str.c_str()[0];
+                        const char s3 = third_str.c_str()[0];
+                        const char s4 = fourth_str.c_str()[0];
+                        BaseSymbol first = Base::base_symbol_from_char(s1);
+                        BaseSymbol second = Base::base_symbol_from_char(s2);
+                        BaseSymbol third = Base::base_symbol_from_char(s3);
+                        BaseSymbol fourth = Base::base_symbol_from_char(s4);
+                        
+                        // array filling
+                        db_data[(Size)first][(Size)second][(Size)third][(Size)fourth] = step_params;             
+                    }
         // setup
         steps_db = StepParametersDB(model_name, db_data);
         
@@ -397,31 +413,43 @@ namespace DNASim {
 
     // ForceConstantsDB
 #define SEQ_DIM 4
+
+    //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     template <class ArchiveType>
     void save(ArchiveType& archive, const ForceConstantsDB& fmat_db) {
 
         // model name
         archive(cereal::make_nvp("model_name", fmat_db.model_name()));
 
-        // intrinsic step parameters
-        for (Size i=0; i<SEQ_DIM; ++i)
-            for (Size j=0; j<SEQ_DIM; ++j) {
+        // force constants
+        for (Size i=0; i<SEQ_DIM+1; ++i)
+            for (Size j=0; j<SEQ_DIM; ++j)
+                for (Size k=0; k<SEQ_DIM; ++k)
+                    for (Size l=0; l<SEQ_DIM+1; ++l) {
 
-                // nucleotides
-                const BaseSymbol first = static_cast<BaseSymbol>(i);
-                const BaseSymbol last = static_cast<BaseSymbol>(j);
-                const StepSequence step_seq(first, last);
+                        // nucleotides
+                        const BaseSymbol first = static_cast<BaseSymbol>(i);
+                        const BaseSymbol second = static_cast<BaseSymbol>(j);
+                        const BaseSymbol third = static_cast<BaseSymbol>(k);
+                        const BaseSymbol fourth = static_cast<BaseSymbol>(l);
+                        const TetramerSequence tetra_seq(first, second, third, fourth);
 
-                // save
-                archive(cereal::make_nvp("first_base",
-                                         Base::str(first)),
-                        cereal::make_nvp("last_base",
-                                         Base::str(last)),
-                        cereal::make_nvp("force_constants",
-                                         fmat_db.force_constants(step_seq)));
-            }
+                        // save
+                        archive(cereal::make_nvp("first_base",
+                                                    Base::str(first)),
+                                cereal::make_nvp("second_base",
+                                                    Base::str(second)),
+                                cereal::make_nvp("third_base",
+                                                    Base::str(third)),
+                                cereal::make_nvp("fourth_base",
+                                                    Base::str(fourth)),
+                                cereal::make_nvp("force_constants",
+                                         fmat_db.force_constants(tetra_seq)));
+                    }
 
     };
+
+    //Changed by Zoe Wefers (McGill University, June 2021, DIMACS REU)
     template <class ArchiveType>
     void load(ArchiveType& archive, ForceConstantsDB& fmat_db) {
 
@@ -430,25 +458,31 @@ namespace DNASim {
         archive(model_name);
 
         // intrinsic step parameters
-        MatrixN db_data[SEQ_DIM][SEQ_DIM];
-        for (Size i=0; i<SEQ_DIM; ++i)
-            for (Size j=0; j<SEQ_DIM; ++j) {
+        MatrixN db_data[SEQ_DIM+1][SEQ_DIM][SEQ_DIM][SEQ_DIM+1];
+        for (Size i=0; i<SEQ_DIM+1; ++i)
+            for (Size j=0; j<SEQ_DIM; ++j)
+                for (Size k=0; k<SEQ_DIM; ++k)
+                    for (Size l=0; l<SEQ_DIM+1; ++l) {
 
-                // load
-                std::string first_str, last_str;
-                MatrixN fmat_vals;
-                archive(first_str, last_str, fmat_vals);
+                        // load
+                        std::string first_str, second_str, third_str, fourth_str;
+                        MatrixN fmat_vals;
+                        archive(first_str, second_str, third_str, fourth_str, fmat_vals);
 
-                // nucleotide types
-                const char s1 = first_str.c_str()[0];
-                const char s2 = last_str.c_str()[0];
-                BaseSymbol first = Base::base_symbol_from_char(s1);
-                BaseSymbol last = Base::base_symbol_from_char(s2);
-                
-                // array filling
-                db_data[(Size)first][(Size)last] = fmat_vals;
-                
-            }
+                        // nucleotide types
+                        const char s1 = first_str.c_str()[0];
+                        const char s2 = second_str.c_str()[0];
+                        const char s3 = third_str.c_str()[0];
+                        const char s4 = fourth_str.c_str()[0];
+                        BaseSymbol first = Base::base_symbol_from_char(s1);
+                        BaseSymbol second = Base::base_symbol_from_char(s2);
+                        BaseSymbol third = Base::base_symbol_from_char(s3);
+                        BaseSymbol fourth = Base::base_symbol_from_char(s4);
+                        
+                        // array filling
+                        db_data[(Size)first][(Size)second][(Size)third][(Size)fourth] = fmat_vals;
+                        
+                    }
         
         // setup
         fmat_db = ForceConstantsDB(model_name, db_data);

@@ -24,11 +24,13 @@ namespace DNASim {
     #include "dna/StepParameters_AnisoDNA_304.h"
     #include "dna/StepParameters_Olson1998.h"
     #include "dna/StepParameters_Olson1998Legacy.h"
+    #include "dna/StepParameters_Cohen2017_dim.h" //Added by Zoe Wefers (McGill University, July 2021, DIMACS REU)
 
     // list of sequence dependence model - force constants
     #include "dna/ForceConstants_IdealDNA.h"
     #include "dna/ForceConstants_AnisoDNA.h"
     #include "dna/ForceConstants_Olson1998.h"
+    #include "dna/ForceConstants_Cohen2017_dim.h" //Added by Zoe Wefers (McGill University, July 2021, DIMACS REU)
 
 
     // sequence-dependence model structure
@@ -91,6 +93,14 @@ namespace DNASim {
                                         ForceConstants_Olson1998,
                                         "force field from W. K. Olson 98 "
                                         "paper (legacy)")
+        },
+
+        // Added by Zoe Wefers (McGill University, July 2021, DIMACS REU)
+        // Cohen2017_dim
+        { "Cohen2017_dim",
+            SequenceDependenceModelData(StepParameters_Cohen2017_dim,
+                                        ForceConstants_Cohen2017_dim,
+                                        "Dimeric force field from Cohen (2017)")
         },
 
     };
